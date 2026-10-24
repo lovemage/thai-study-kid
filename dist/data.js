@@ -45,4 +45,16 @@ const rawLetters=[
 ['ฮ','นกฮูก','owl','貓頭鷹','hɔɔ nók-hûuk','h, like hello','h 音，像 hello 的開頭','owl']
 ];
 const letters=rawLetters.map((r,i)=>({id:i+1,char:r[0],word:r[1],en:r[2],zh:r[3],roman:r[4],sound:r[5],soundZh:r[6],art:r[7],tip:r[8]||'Find the small loop. Watch the moving line, then follow it slowly.',tipZh:r[9]||'先找小圓圈。仔細看移動的線條，再慢慢跟著寫。'}));
-const chapters=[{name:'Hello, little letters',zh:'你好，小字母',sub:'Meet your first four friends',ids:[1,2,4,7],color:'#e7edc8',icon:'01'}, {name:'Look, listen & discover',zh:'看一看，聽一聽',sub:'New shapes, new sounds',ids:[8,10,11,20],color:'#f8e4bf',icon:'02'}, {name:'A little everyday magic',zh:'生活中的小發現',sub:'Four familiar things',ids:[21,22,23,25],color:'#e0e6f9',icon:'03'}, {name:'Let’s grow together',zh:'一起長大吧',sub:'More letters to love',ids:[26,27,33,36],color:'#f2dce7',icon:'04'}];
+// Thai classrooms teach the consonants in ก→ฮ order, so the 11 islands take the next four letters each.
+const chapters=[
+{name:'Farm Island',zh:'小農場島',ids:[1,2,3,4]},
+{name:'Bell Hill Island',zh:'鈴鐺山丘島',ids:[5,6,7,8]},
+{name:'Elephant Village',zh:'大象村',ids:[9,10,11,12]},
+{name:'Dancing Stage Island',zh:'舞蹈舞台島',ids:[13,14,15,16]},
+{name:'Temple Island',zh:'寺廟島',ids:[17,18,19,20]},
+{name:'Turtle Castle',zh:'烏龜城堡',ids:[21,22,23,24]},
+{name:'Bee Garden Island',zh:'蜜蜂花園島',ids:[25,26,27,28]},
+{name:'Sailing Ship Harbor',zh:'帆船港',ids:[29,30,31,32]},
+{name:'Jungle Tree Island',zh:'叢林大樹島',ids:[33,34,35,36]},
+{name:'Tiger Forest',zh:'老虎森林',ids:[37,38,39,40]},
+{name:'Owl Treasure Island',zh:'貓頭鷹寶藏島',ids:[41,42,43,44]}];

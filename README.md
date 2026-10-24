@@ -1,6 +1,6 @@
 # Thai Sprout
 
-An iPad-friendly Thai consonant introduction for ages 6–8. Four chapters introduce 16 letters; the parent explorer contains all 44. The home screen is an adventure map: each chapter is an island that starts grey and withered and comes alive with an animation once its four letters are done; the next island unlocks after the previous one. Each lesson follows Listen → Write → Play with large buttons, English or Traditional Chinese hints, animated vocabulary and finger/Pencil practice.
+An iPad-friendly Thai consonant introduction for ages 6–8. Eleven island chapters teach all 44 consonants in the ก→ฮ order used in Thai classrooms, four letters per island; the parent explorer also opens any letter directly. The home screen is an adventure map: each chapter is an island that starts grey and withered and comes alive with an animation once its four letters are done; the next island unlocks after the previous one. Each lesson follows Listen → Write → Play with large buttons, English or Traditional Chinese hints, animated vocabulary and finger/Pencil practice.
 
 ## OpenRouter teacher voice
 
@@ -33,3 +33,9 @@ API references: https://openrouter.ai/docs/guides/overview/multimodal/tts and ht
 Each new letter starts with its card face down. Tap the card or Listen: the cover shows a waiting animation while audio downloads and decodes. Actual audio playback triggers a lifted 3D flip and short sparkle. Prefetching alone never reveals the card. Failed or cancelled playback leaves it covered; replay keeps an already revealed card open. Reduced-motion preferences show the result without the turn or sparkles.
 
 Writing modes use illustrated buttons (dotted tracing, copying from a model, independent writing) with a selected check mark and accessible English/Chinese names. The coach hint and practice canvas change together. Run `node --test tests/reveal.test.mjs` for readiness, repeated taps, cancellation and failed audio checks.
+
+## Matching game cards
+
+Find my friend begins with all three choices covered. The question audio's playback-start event flips them in a short left-to-right sequence, then enables answering. Failed loading and unrelated hint/reward sounds never reveal answers. The answer labels are also hidden from accessibility names until the reveal. Replaying audio keeps the current question's positions stable.
+
+Each new round samples two distinct distractors and shuffles all three choices. The previous full arrangement for that letter is saved in browser progress and cannot repeat immediately. Correct answers may naturally recur in the same column when the other choices change; there is no predictable left-middle-right cycle. Tests: `node --test tests/quiz-cards.test.mjs tests/reveal.test.mjs`.
