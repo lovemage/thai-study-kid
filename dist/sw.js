@@ -1,11 +1,11 @@
-const VERSION='sprout-pwa-9';
-const SHELL=[ './','./index.html','./style.css','./data.js','./art.js','./islands.js','./voice.js','./app.js','./drawing.js','./speech.js','./speech-core.mjs','./pwa.js','./account.js','./terms.html','./privacy.html','./legal.css','./manifest.webmanifest','./assets/writing.json','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-maskable.png',...Array.from({length:44},(_,i)=>`./assets/letter-${i+1}.mp3`) ];
+const VERSION='sprout-pwa-10';
+const SHELL=[ './','./index.html','./style.css','./data.js','./vocab.js','./art.js','./islands.js','./voice.js','./app.js','./drawing.js','./speech.js','./speech-core.mjs','./pwa.js','./account.js','./terms.html','./privacy.html','./legal.css','./manifest.webmanifest','./assets/writing.json','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-maskable.png',...Array.from({length:44},(_,i)=>`./assets/letter-${i+1}.mp3`) ];
 // Do not skipWaiting: a new release activates after all old app windows close.
 // This avoids replacing a lesson while a child is drawing or speaking.
 // Fetch the release straight from the server: a stale browser HTTP cache would otherwise freeze an old file into the new version.
 self.addEventListener('install',event=>event.waitUntil(caches.open(VERSION).then(cache=>cache.addAll(SHELL.map(path=>new Request(path,{cache:'reload'}))))));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{
- for(const name of await caches.keys())if(name.startsWith('sprout-pwa-')&&name!==VERSION)await caches.delete(name);
+ for(const name of await caches.keys())if(name.startsWith('sprout-pwa-')&&name!==VERSION||name==='sprout-lesson-audio-v1')await caches.delete(name);
  await self.clients.claim();
 })()));
 self.addEventListener('fetch',event=>{
@@ -13,7 +13,7 @@ self.addEventListener('fetch',event=>{
  if(req.method!=='GET')return;
  // Only fixed public lesson audio is cached from the API, never status responses.
  if(url.pathname==='/api/voice'&&url.searchParams.has('clip')&&[self.location.origin,'https://thai-sprout-learning.netlify.app'].includes(url.origin)){
-  event.respondWith((async()=>{const cache=await caches.open('sprout-lesson-audio-v1'),hit=await cache.match(req);if(hit)return hit;
+  event.respondWith((async()=>{const cache=await caches.open('sprout-lesson-audio-v2'),hit=await cache.match(req);if(hit)return hit;
    const response=await fetch(req);if(response.ok&&response.headers.get('content-type')?.startsWith('audio/'))await cache.put(req,response.clone());return response;})());return;
  }
  if(url.origin!==self.location.origin||url.pathname.startsWith('/api/'))return;

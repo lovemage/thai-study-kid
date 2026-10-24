@@ -1,7 +1,7 @@
 {
   "letter-1": {
     "lang": "th",
-    "text": "กอ ไก่... กอ ไก่"
+    "text": "กอ ไก่"
   },
   "word-1": {
     "lang": "th",
@@ -11,9 +11,21 @@
     "lang": "en",
     "text": "Look at this picture. chicken. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-1-1": {
+    "lang": "th",
+    "text": "กบ"
+  },
+  "vocab-1-2": {
+    "lang": "th",
+    "text": "กล้วย"
+  },
+  "vocab-1-3": {
+    "lang": "th",
+    "text": "กุหลาบ"
+  },
   "letter-2": {
     "lang": "th",
-    "text": "ขอ ไข่... ขอ ไข่"
+    "text": "ขอ ไข่"
   },
   "word-2": {
     "lang": "th",
@@ -23,9 +35,21 @@
     "lang": "en",
     "text": "Look at this picture. egg. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-2-1": {
+    "lang": "th",
+    "text": "ข้าว"
+  },
+  "vocab-2-2": {
+    "lang": "th",
+    "text": "ขา"
+  },
+  "vocab-2-3": {
+    "lang": "th",
+    "text": "ขนม"
+  },
   "letter-3": {
     "lang": "th",
-    "text": "ฃอ ขวด... ฃอ ขวด"
+    "text": "ฃอ ขวด"
   },
   "word-3": {
     "lang": "th",
@@ -35,9 +59,21 @@
     "lang": "en",
     "text": "Look at this picture. bottle. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-3-1": {
+    "lang": "th",
+    "text": "ขวาน"
+  },
+  "vocab-3-2": {
+    "lang": "th",
+    "text": "ขนมปัง"
+  },
+  "vocab-3-3": {
+    "lang": "th",
+    "text": "ข้าวโพด"
+  },
   "letter-4": {
     "lang": "th",
-    "text": "คอ ควาย... คอ ควาย"
+    "text": "คอ ควาย"
   },
   "word-4": {
     "lang": "th",
@@ -47,9 +83,21 @@
     "lang": "en",
     "text": "Look at this picture. buffalo. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-4-1": {
+    "lang": "th",
+    "text": "แครอท"
+  },
+  "vocab-4-2": {
+    "lang": "th",
+    "text": "คุกกี้"
+  },
+  "vocab-4-3": {
+    "lang": "th",
+    "text": "ค้างคาว"
+  },
   "letter-5": {
     "lang": "th",
-    "text": "ฅอ คน... ฅอ คน"
+    "text": "ฅอ คน"
   },
   "word-5": {
     "lang": "th",
@@ -59,9 +107,21 @@
     "lang": "en",
     "text": "Look at this picture. person. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-5-1": {
+    "lang": "th",
+    "text": "คอมพิวเตอร์"
+  },
+  "vocab-5-2": {
+    "lang": "th",
+    "text": "ครู"
+  },
+  "vocab-5-3": {
+    "lang": "th",
+    "text": "เค้ก"
+  },
   "letter-6": {
     "lang": "th",
-    "text": "ฆอ ระฆัง... ฆอ ระฆัง"
+    "text": "ฆอ ระฆัง"
   },
   "word-6": {
     "lang": "th",
@@ -71,9 +131,21 @@
     "lang": "en",
     "text": "Look at this picture. bell. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-6-1": {
+    "lang": "th",
+    "text": "เมฆ"
+  },
+  "vocab-6-2": {
+    "lang": "th",
+    "text": "โฆษณา"
+  },
+  "vocab-6-3": {
+    "lang": "th",
+    "text": "พยัคฆ์"
+  },
   "letter-7": {
     "lang": "th",
-    "text": "งอ งู... งอ งู"
+    "text": "งอ งู"
   },
   "word-7": {
     "lang": "th",
@@ -83,9 +155,21 @@
     "lang": "en",
     "text": "Look at this picture. snake. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-7-1": {
+    "lang": "th",
+    "text": "ลิง"
+  },
+  "vocab-7-2": {
+    "lang": "th",
+    "text": "กุ้ง"
+  },
+  "vocab-7-3": {
+    "lang": "th",
+    "text": "แตงโม"
+  },
   "letter-8": {
     "lang": "th",
-    "text": "จอ จาน... จอ จาน"
+    "text": "จอ จาน"
   },
   "word-8": {
     "lang": "th",
@@ -95,9 +179,21 @@
     "lang": "en",
     "text": "Look at this picture. plate. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-8-1": {
+    "lang": "th",
+    "text": "จมูก"
+  },
+  "vocab-8-2": {
+    "lang": "th",
+    "text": "จักรยาน"
+  },
+  "vocab-8-3": {
+    "lang": "th",
+    "text": "จิ้งจก"
+  },
   "letter-9": {
     "lang": "th",
-    "text": "ฉอ ฉิ่ง... ฉอ ฉิ่ง"
+    "text": "ฉอ ฉิ่ง"
   },
   "word-9": {
     "lang": "th",
@@ -107,9 +203,21 @@
     "lang": "en",
     "text": "Look at this picture. small cymbals. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-9-1": {
+    "lang": "th",
+    "text": "ฉลาม"
+  },
+  "vocab-9-2": {
+    "lang": "th",
+    "text": "ฉัน"
+  },
+  "vocab-9-3": {
+    "lang": "th",
+    "text": "ฉลาด"
+  },
   "letter-10": {
     "lang": "th",
-    "text": "ชอ ช้าง... ชอ ช้าง"
+    "text": "ชอ ช้าง"
   },
   "word-10": {
     "lang": "th",
@@ -119,9 +227,21 @@
     "lang": "en",
     "text": "Look at this picture. elephant. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-10-1": {
+    "lang": "th",
+    "text": "ช้อน"
+  },
+  "vocab-10-2": {
+    "lang": "th",
+    "text": "ชา"
+  },
+  "vocab-10-3": {
+    "lang": "th",
+    "text": "เชอร์รี่"
+  },
   "letter-11": {
     "lang": "th",
-    "text": "ซอ โซ่... ซอ โซ่"
+    "text": "ซอ โซ่"
   },
   "word-11": {
     "lang": "th",
@@ -131,9 +251,21 @@
     "lang": "en",
     "text": "Look at this picture. chain. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-11-1": {
+    "lang": "th",
+    "text": "ซุป"
+  },
+  "vocab-11-2": {
+    "lang": "th",
+    "text": "ซาลาเปา"
+  },
+  "vocab-11-3": {
+    "lang": "th",
+    "text": "ซ้าย"
+  },
   "letter-12": {
     "lang": "th",
-    "text": "ฌอ เฌอ... ฌอ เฌอ"
+    "text": "ฌอ เฌอ"
   },
   "word-12": {
     "lang": "th",
@@ -143,9 +275,21 @@
     "lang": "en",
     "text": "Look at this picture. tree. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-12-1": {
+    "lang": "th",
+    "text": "ชาม"
+  },
+  "vocab-12-2": {
+    "lang": "th",
+    "text": "ชีส"
+  },
+  "vocab-12-3": {
+    "lang": "th",
+    "text": "ชาวนา"
+  },
   "letter-13": {
     "lang": "th",
-    "text": "ญอ หญิง... ญอ หญิง"
+    "text": "ญอ หญิง"
   },
   "word-13": {
     "lang": "th",
@@ -155,9 +299,21 @@
     "lang": "en",
     "text": "Look at this picture. woman. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-13-1": {
+    "lang": "th",
+    "text": "หญ้า"
+  },
+  "vocab-13-2": {
+    "lang": "th",
+    "text": "ใหญ่"
+  },
+  "vocab-13-3": {
+    "lang": "th",
+    "text": "ญาติ"
+  },
   "letter-14": {
     "lang": "th",
-    "text": "ฎอ ชฎา... ฎอ ชฎา"
+    "text": "ฎอ ชฎา"
   },
   "word-14": {
     "lang": "th",
@@ -167,9 +323,21 @@
     "lang": "en",
     "text": "Look at this picture. headdress. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-14-1": {
+    "lang": "th",
+    "text": "ชฎา"
+  },
+  "vocab-14-2": {
+    "lang": "th",
+    "text": "กฎ"
+  },
+  "vocab-14-3": {
+    "lang": "th",
+    "text": "กฎจราจร"
+  },
   "letter-15": {
     "lang": "th",
-    "text": "ฏอ ปฏัก... ฏอ ปฏัก"
+    "text": "ฏอ ปฏัก"
   },
   "word-15": {
     "lang": "th",
@@ -179,9 +347,21 @@
     "lang": "en",
     "text": "Look at this picture. goad. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-15-1": {
+    "lang": "th",
+    "text": "ปฏิทิน"
+  },
+  "vocab-15-2": {
+    "lang": "th",
+    "text": "ปรากฏ"
+  },
+  "vocab-15-3": {
+    "lang": "th",
+    "text": "ปฏิเสธ"
+  },
   "letter-16": {
     "lang": "th",
-    "text": "ฐอ ฐาน... ฐอ ฐาน"
+    "text": "ฐอ ฐาน"
   },
   "word-16": {
     "lang": "th",
@@ -191,9 +371,21 @@
     "lang": "en",
     "text": "Look at this picture. pedestal. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-16-1": {
+    "lang": "th",
+    "text": "อิฐ"
+  },
+  "vocab-16-2": {
+    "lang": "th",
+    "text": "เศรษฐี"
+  },
+  "vocab-16-3": {
+    "lang": "th",
+    "text": "ประเสริฐ"
+  },
   "letter-17": {
     "lang": "th",
-    "text": "ฑอ มณโฑ... ฑอ มณโฑ"
+    "text": "ฑอ มณโฑ"
   },
   "word-17": {
     "lang": "th",
@@ -203,9 +395,21 @@
     "lang": "en",
     "text": "Look at this picture. Montho. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-17-1": {
+    "lang": "th",
+    "text": "บัณฑิต"
+  },
+  "vocab-17-2": {
+    "lang": "th",
+    "text": "กรีฑา"
+  },
+  "vocab-17-3": {
+    "lang": "th",
+    "text": "มณฑป"
+  },
   "letter-18": {
     "lang": "th",
-    "text": "ฒอ ผู้เฒ่า... ฒอ ผู้เฒ่า"
+    "text": "ฒอ ผู้เฒ่า"
   },
   "word-18": {
     "lang": "th",
@@ -215,9 +419,21 @@
     "lang": "en",
     "text": "Look at this picture. elder. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-18-1": {
+    "lang": "th",
+    "text": "เฒ่า"
+  },
+  "vocab-18-2": {
+    "lang": "th",
+    "text": "วัฒนธรรม"
+  },
+  "vocab-18-3": {
+    "lang": "th",
+    "text": "พัฒนา"
+  },
   "letter-19": {
     "lang": "th",
-    "text": "ณอ เณร... ณอ เณร"
+    "text": "ณอ เณร"
   },
   "word-19": {
     "lang": "th",
@@ -227,9 +443,21 @@
     "lang": "en",
     "text": "Look at this picture. novice monk. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-19-1": {
+    "lang": "th",
+    "text": "คุณแม่"
+  },
+  "vocab-19-2": {
+    "lang": "th",
+    "text": "คุณพ่อ"
+  },
+  "vocab-19-3": {
+    "lang": "th",
+    "text": "คุณครู"
+  },
   "letter-20": {
     "lang": "th",
-    "text": "ดอ เด็ก... ดอ เด็ก"
+    "text": "ดอ เด็ก"
   },
   "word-20": {
     "lang": "th",
@@ -239,9 +467,21 @@
     "lang": "en",
     "text": "Look at this picture. child. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-20-1": {
+    "lang": "th",
+    "text": "ดอกไม้"
+  },
+  "vocab-20-2": {
+    "lang": "th",
+    "text": "เป็ด"
+  },
+  "vocab-20-3": {
+    "lang": "th",
+    "text": "ดินสอ"
+  },
   "letter-21": {
     "lang": "th",
-    "text": "ตอ เต่า... ตอ เต่า"
+    "text": "ตอ เต่า"
   },
   "word-21": {
     "lang": "th",
@@ -251,9 +491,21 @@
     "lang": "en",
     "text": "Look at this picture. turtle. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-21-1": {
+    "lang": "th",
+    "text": "ต้นไม้"
+  },
+  "vocab-21-2": {
+    "lang": "th",
+    "text": "ตุ๊กตา"
+  },
+  "vocab-21-3": {
+    "lang": "th",
+    "text": "แตงกวา"
+  },
   "letter-22": {
     "lang": "th",
-    "text": "ถอ ถุง... ถอ ถุง"
+    "text": "ถอ ถุง"
   },
   "word-22": {
     "lang": "th",
@@ -263,9 +515,21 @@
     "lang": "en",
     "text": "Look at this picture. bag. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-22-1": {
+    "lang": "th",
+    "text": "รถ"
+  },
+  "vocab-22-2": {
+    "lang": "th",
+    "text": "ถั่ว"
+  },
+  "vocab-22-3": {
+    "lang": "th",
+    "text": "ถ้วย"
+  },
   "letter-23": {
     "lang": "th",
-    "text": "ทอ ทหาร... ทอ ทหาร"
+    "text": "ทอ ทหาร"
   },
   "word-23": {
     "lang": "th",
@@ -275,9 +539,21 @@
     "lang": "en",
     "text": "Look at this picture. soldier. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-23-1": {
+    "lang": "th",
+    "text": "ทะเล"
+  },
+  "vocab-23-2": {
+    "lang": "th",
+    "text": "ท้องฟ้า"
+  },
+  "vocab-23-3": {
+    "lang": "th",
+    "text": "หอยทาก"
+  },
   "letter-24": {
     "lang": "th",
-    "text": "ธอ ธง... ธอ ธง"
+    "text": "ธอ ธง"
   },
   "word-24": {
     "lang": "th",
@@ -287,9 +563,21 @@
     "lang": "en",
     "text": "Look at this picture. flag. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-24-1": {
+    "lang": "th",
+    "text": "ธนู"
+  },
+  "vocab-24-2": {
+    "lang": "th",
+    "text": "ธรรมชาติ"
+  },
+  "vocab-24-3": {
+    "lang": "th",
+    "text": "ธนาคาร"
+  },
   "letter-25": {
     "lang": "th",
-    "text": "นอ หนู... นอ หนู"
+    "text": "นอ หนู"
   },
   "word-25": {
     "lang": "th",
@@ -299,9 +587,21 @@
     "lang": "en",
     "text": "Look at this picture. mouse. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-25-1": {
+    "lang": "th",
+    "text": "นก"
+  },
+  "vocab-25-2": {
+    "lang": "th",
+    "text": "นม"
+  },
+  "vocab-25-3": {
+    "lang": "th",
+    "text": "น้ำ"
+  },
   "letter-26": {
     "lang": "th",
-    "text": "บอ ใบไม้... บอ ใบไม้"
+    "text": "บอ ใบไม้"
   },
   "word-26": {
     "lang": "th",
@@ -311,9 +611,21 @@
     "lang": "en",
     "text": "Look at this picture. leaf. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-26-1": {
+    "lang": "th",
+    "text": "บ้าน"
+  },
+  "vocab-26-2": {
+    "lang": "th",
+    "text": "ลูกบอล"
+  },
+  "vocab-26-3": {
+    "lang": "th",
+    "text": "บันได"
+  },
   "letter-27": {
     "lang": "th",
-    "text": "ปอ ปลา... ปอ ปลา"
+    "text": "ปอ ปลา"
   },
   "word-27": {
     "lang": "th",
@@ -323,9 +635,21 @@
     "lang": "en",
     "text": "Look at this picture. fish. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-27-1": {
+    "lang": "th",
+    "text": "ปู"
+  },
+  "vocab-27-2": {
+    "lang": "th",
+    "text": "ปาก"
+  },
+  "vocab-27-3": {
+    "lang": "th",
+    "text": "แปรงสีฟัน"
+  },
   "letter-28": {
     "lang": "th",
-    "text": "ผอ ผึ้ง... ผอ ผึ้ง"
+    "text": "ผอ ผึ้ง"
   },
   "word-28": {
     "lang": "th",
@@ -335,9 +659,21 @@
     "lang": "en",
     "text": "Look at this picture. bee. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-28-1": {
+    "lang": "th",
+    "text": "ผีเสื้อ"
+  },
+  "vocab-28-2": {
+    "lang": "th",
+    "text": "ผัก"
+  },
+  "vocab-28-3": {
+    "lang": "th",
+    "text": "ผลไม้"
+  },
   "letter-29": {
     "lang": "th",
-    "text": "ฝอ ฝา... ฝอ ฝา"
+    "text": "ฝอ ฝา"
   },
   "word-29": {
     "lang": "th",
@@ -347,9 +683,21 @@
     "lang": "en",
     "text": "Look at this picture. lid. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-29-1": {
+    "lang": "th",
+    "text": "ฝน"
+  },
+  "vocab-29-2": {
+    "lang": "th",
+    "text": "ฝัน"
+  },
+  "vocab-29-3": {
+    "lang": "th",
+    "text": "ฝาแฝด"
+  },
   "letter-30": {
     "lang": "th",
-    "text": "พอ พาน... พอ พาน"
+    "text": "พอ พาน"
   },
   "word-30": {
     "lang": "th",
@@ -359,9 +707,21 @@
     "lang": "en",
     "text": "Look at this picture. tray with a pedestal. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-30-1": {
+    "lang": "th",
+    "text": "พ่อ"
+  },
+  "vocab-30-2": {
+    "lang": "th",
+    "text": "พระอาทิตย์"
+  },
+  "vocab-30-3": {
+    "lang": "th",
+    "text": "พริก"
+  },
   "letter-31": {
     "lang": "th",
-    "text": "ฟอ ฟัน... ฟอ ฟัน"
+    "text": "ฟอ ฟัน"
   },
   "word-31": {
     "lang": "th",
@@ -371,9 +731,21 @@
     "lang": "en",
     "text": "Look at this picture. tooth. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-31-1": {
+    "lang": "th",
+    "text": "ไฟ"
+  },
+  "vocab-31-2": {
+    "lang": "th",
+    "text": "ฟักทอง"
+  },
+  "vocab-31-3": {
+    "lang": "th",
+    "text": "ฟ้าร้อง"
+  },
   "letter-32": {
     "lang": "th",
-    "text": "ภอ สำเภา... ภอ สำเภา"
+    "text": "ภอ สำเภา"
   },
   "word-32": {
     "lang": "th",
@@ -383,9 +755,21 @@
     "lang": "en",
     "text": "Look at this picture. sailing ship. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-32-1": {
+    "lang": "th",
+    "text": "ภูเขา"
+  },
+  "vocab-32-2": {
+    "lang": "th",
+    "text": "ภาพ"
+  },
+  "vocab-32-3": {
+    "lang": "th",
+    "text": "ภาชนะ"
+  },
   "letter-33": {
     "lang": "th",
-    "text": "มอ ม้า... มอ ม้า"
+    "text": "มอ ม้า"
   },
   "word-33": {
     "lang": "th",
@@ -395,9 +779,21 @@
     "lang": "en",
     "text": "Look at this picture. horse. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-33-1": {
+    "lang": "th",
+    "text": "แมว"
+  },
+  "vocab-33-2": {
+    "lang": "th",
+    "text": "มะม่วง"
+  },
+  "vocab-33-3": {
+    "lang": "th",
+    "text": "มือ"
+  },
   "letter-34": {
     "lang": "th",
-    "text": "ยอ ยักษ์... ยอ ยักษ์"
+    "text": "ยอ ยักษ์"
   },
   "word-34": {
     "lang": "th",
@@ -407,9 +803,21 @@
     "lang": "en",
     "text": "Look at this picture. giant. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-34-1": {
+    "lang": "th",
+    "text": "ยีราฟ"
+  },
+  "vocab-34-2": {
+    "lang": "th",
+    "text": "ยาย"
+  },
+  "vocab-34-3": {
+    "lang": "th",
+    "text": "ยิ้ม"
+  },
   "letter-35": {
     "lang": "th",
-    "text": "รอ เรือ... รอ เรือ"
+    "text": "รอ เรือ"
   },
   "word-35": {
     "lang": "th",
@@ -419,9 +827,21 @@
     "lang": "en",
     "text": "Look at this picture. boat. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-35-1": {
+    "lang": "th",
+    "text": "รุ้ง"
+  },
+  "vocab-35-2": {
+    "lang": "th",
+    "text": "รองเท้า"
+  },
+  "vocab-35-3": {
+    "lang": "th",
+    "text": "กระรอก"
+  },
   "letter-36": {
     "lang": "th",
-    "text": "ลอ ลิง... ลอ ลิง"
+    "text": "ลอ ลิง"
   },
   "word-36": {
     "lang": "th",
@@ -431,9 +851,21 @@
     "lang": "en",
     "text": "Look at this picture. monkey. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-36-1": {
+    "lang": "th",
+    "text": "ปลา"
+  },
+  "vocab-36-2": {
+    "lang": "th",
+    "text": "ลูกโป่ง"
+  },
+  "vocab-36-3": {
+    "lang": "th",
+    "text": "ลม"
+  },
   "letter-37": {
     "lang": "th",
-    "text": "วอ แหวน... วอ แหวน"
+    "text": "วอ แหวน"
   },
   "word-37": {
     "lang": "th",
@@ -443,9 +875,21 @@
     "lang": "en",
     "text": "Look at this picture. ring. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-37-1": {
+    "lang": "th",
+    "text": "วัว"
+  },
+  "vocab-37-2": {
+    "lang": "th",
+    "text": "ว่าว"
+  },
+  "vocab-37-3": {
+    "lang": "th",
+    "text": "แว่นตา"
+  },
   "letter-38": {
     "lang": "th",
-    "text": "ศอ ศาลา... ศอ ศาลา"
+    "text": "ศอ ศาลา"
   },
   "word-38": {
     "lang": "th",
@@ -455,9 +899,21 @@
     "lang": "en",
     "text": "Look at this picture. pavilion. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-38-1": {
+    "lang": "th",
+    "text": "ศิลปะ"
+  },
+  "vocab-38-2": {
+    "lang": "th",
+    "text": "ประเทศ"
+  },
+  "vocab-38-3": {
+    "lang": "th",
+    "text": "ศีรษะ"
+  },
   "letter-39": {
     "lang": "th",
-    "text": "ษอ ฤๅษี... ษอ ฤๅษี"
+    "text": "ษอ ฤๅษี"
   },
   "word-39": {
     "lang": "th",
@@ -467,9 +923,21 @@
     "lang": "en",
     "text": "Look at this picture. hermit. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-39-1": {
+    "lang": "th",
+    "text": "กระดาษ"
+  },
+  "vocab-39-2": {
+    "lang": "th",
+    "text": "ยักษ์"
+  },
+  "vocab-39-3": {
+    "lang": "th",
+    "text": "ภาษา"
+  },
   "letter-40": {
     "lang": "th",
-    "text": "สอ เสือ... สอ เสือ"
+    "text": "สอ เสือ"
   },
   "word-40": {
     "lang": "th",
@@ -479,9 +947,21 @@
     "lang": "en",
     "text": "Look at this picture. tiger. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-40-1": {
+    "lang": "th",
+    "text": "สิงโต"
+  },
+  "vocab-40-2": {
+    "lang": "th",
+    "text": "ส้ม"
+  },
+  "vocab-40-3": {
+    "lang": "th",
+    "text": "สุนัข"
+  },
   "letter-41": {
     "lang": "th",
-    "text": "หอ หีบ... หอ หีบ"
+    "text": "หอ หีบ"
   },
   "word-41": {
     "lang": "th",
@@ -491,9 +971,21 @@
     "lang": "en",
     "text": "Look at this picture. chest. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-41-1": {
+    "lang": "th",
+    "text": "หมู"
+  },
+  "vocab-41-2": {
+    "lang": "th",
+    "text": "หมี"
+  },
+  "vocab-41-3": {
+    "lang": "th",
+    "text": "หมวก"
+  },
   "letter-42": {
     "lang": "th",
-    "text": "ฬอ จุฬา... ฬอ จุฬา"
+    "text": "ฬอ จุฬา"
   },
   "word-42": {
     "lang": "th",
@@ -503,9 +995,21 @@
     "lang": "en",
     "text": "Look at this picture. star-shaped kite. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-42-1": {
+    "lang": "th",
+    "text": "นาฬิกา"
+  },
+  "vocab-42-2": {
+    "lang": "th",
+    "text": "กีฬา"
+  },
+  "vocab-42-3": {
+    "lang": "th",
+    "text": "ปลาวาฬ"
+  },
   "letter-43": {
     "lang": "th",
-    "text": "ออ อ่าง... ออ อ่าง"
+    "text": "ออ อ่าง"
   },
   "word-43": {
     "lang": "th",
@@ -515,9 +1019,21 @@
     "lang": "en",
     "text": "Look at this picture. basin. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
   },
+  "vocab-43-1": {
+    "lang": "th",
+    "text": "อาหาร"
+  },
+  "vocab-43-2": {
+    "lang": "th",
+    "text": "องุ่น"
+  },
+  "vocab-43-3": {
+    "lang": "th",
+    "text": "อูฐ"
+  },
   "letter-44": {
     "lang": "th",
-    "text": "ฮอ นกฮูก... ฮอ นกฮูก"
+    "text": "ฮอ นกฮูก"
   },
   "word-44": {
     "lang": "th",
@@ -526,6 +1042,18 @@
   "explain-44": {
     "lang": "en",
     "text": "Look at this picture. owl. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "vocab-44-1": {
+    "lang": "th",
+    "text": "ฮิปโป"
+  },
+  "vocab-44-2": {
+    "lang": "th",
+    "text": "แฮมเบอร์เกอร์"
+  },
+  "vocab-44-3": {
+    "lang": "th",
+    "text": "เฮลิคอปเตอร์"
   },
   "hint-listen": {
     "lang": "en",

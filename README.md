@@ -4,7 +4,7 @@ An iPad-friendly Thai consonant introduction for ages 6–8. Eleven island chapt
 
 ## OpenRouter teacher voice
 
-Netlify Function `/api/voice` calls OpenRouter's speech endpoint using `google/gemini-3.8-flash-tts`, voice `Sulafat`. The teacher uses warm, relaxed delivery in Thai and English. This is AI-generated speech. Only the 138 fixed lesson scripts can be requested; no child recording, microphone, arbitrary text input or child data is sent.
+Netlify Function `/api/voice` calls OpenRouter's speech endpoint using `google/gemini-3.8-flash-tts`, voice `Sulafat`. The teacher uses warm, relaxed delivery in Thai and English. This is AI-generated speech. Only the 270 fixed lesson scripts can be requested (regenerate `netlify/voice-catalog.json` with `node make-voice-catalog.cjs` after changing `dist/data.js` or `dist/vocab.js`); no child recording, microphone, arbitrary text input or child data is sent.
 
 Set `OPENROUTER_API_KEY` in the Netlify project environment variables. On the free plan, keep the default **all scopes / all contexts**; choosing individual scopes requires Pro. Do not put keys in dist, netlify.toml, Git or client JavaScript. Redeploy after changing variables. No paid Netlify upgrade is needed for the default setting. OpenRouter generation uses the account's credits.
 
@@ -40,6 +40,14 @@ Thai letter-name recordings and writing models: NIU SEAsite, https://seasite.niu
 Run `node --test tests/voice.test.mjs` and `node check-assets.cjs`. Tests cover API request construction, PCM/WAV integrity, invalid input/origin rejection, missing credentials, provider failures, response size limits and all 44 lesson assets. Browser verification covers drawing, progression, matching feedback and language switching. Actual iPad Safari / Pencil hardware and a native speaker review of generated pronunciation remain separate checks.
 
 API references: https://openrouter.ai/docs/guides/overview/multimodal/tts and https://ai.google.dev/gemini-api/docs/speech-generation.
+
+## Landscape, letter names twice, word friends
+
+Thai Sprout is played sideways. Upright phones and tablets (portrait with a touch screen) see a turn-the-device screen and sound stops; the installed app asks for landscape (`orientation` in the manifest; iPadOS ignores it, so the screen covers that case).
+
+Arriving at a letter plays its name automatically, twice with a short breath between (`TeacherVoice.play(id, fallback, button, 2)`); Listen, the card and the game question also say it twice. Each clip says the name once (`กอ ไก่`), so the AI voice and the original recordings repeat the same way. Every one of the 44 names starts with the consonant + อ (กอ, ขอ, … ฮอ).
+
+After the matching game is solved, three everyday words that use the letter appear (animals, food, fruit, plants, family, school…), from `dist/vocab.js`, with the letter highlighted together with its vowel and tone marks. Tap a card to hear it (`vocab-<letter>-<1..3>` clips). ฃ and ฅ are no longer written and ฌ is almost unused, so their cards use the sound twin (ข, ค, ช) and say so. The word list needs a native speaker's review.
 
 ## Letter reveal and illustrated writing modes
 
