@@ -1,4 +1,4 @@
-const VERSION='sprout-pwa-10';
+const VERSION='sprout-pwa-11';
 const SHELL=[ './','./index.html','./style.css','./data.js','./vocab.js','./art.js','./islands.js','./voice.js','./app.js','./drawing.js','./speech.js','./speech-core.mjs','./pwa.js','./account.js','./terms.html','./privacy.html','./legal.css','./manifest.webmanifest','./assets/writing.json','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-maskable.png',...Array.from({length:44},(_,i)=>`./assets/letter-${i+1}.mp3`) ];
 // Do not skipWaiting: a new release activates after all old app windows close.
 // This avoids replacing a lesson while a child is drawing or speaking.

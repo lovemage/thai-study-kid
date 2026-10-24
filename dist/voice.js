@@ -44,7 +44,7 @@ window.TeacherVoice=(()=>{
   if(ticket!==generation)return false;
   busyId=null;playingId=id;
   const say=left=>{source=context.createBufferSource();source.buffer=buffer;source.connect(context.destination);
-   source.onended=()=>{if(ticket!==generation)return;if(left>1)gapTimer=setTimeout(()=>{if(ticket===generation)say(left-1)},650);else{playingId=null;mark(null)}};source.start()};
+   source.onended=()=>{if(ticket!==generation)return;if(left>1)gapTimer=setTimeout(()=>{if(ticket===generation)say(left-1)},650);else{playingId=null;mark(null);announce(id,'ended')}};source.start()};
   say(times);mark(button,'playing');announce(id,'playing');
   if(backup)toast(tr('Playing the original Thai recording.','播放泰語原聲錄音。'));return true;
  }

@@ -230,3 +230,8 @@ body{overflow-x:hidden}.map-screen{text-align:center;padding:0 0 12px}.map-scree
 html[lang="zh-Hant"] #rotate [lang="en"],html:not([lang="zh-Hant"]) #rotate [lang="zh-Hant"]{display:none}
 @keyframes rotate-hint{0%,25%{transform:rotate(0)}55%,85%{transform:rotate(-90deg)}100%{transform:rotate(0)}}
 @media(orientation:landscape) and (min-width:900px){.lesson-card>.word-friends{grid-column:1/-1;grid-row:2;min-height:0;height:100%;margin:0}}
+.word-card.heard{border-color:#9bb877;box-shadow:0 5px 0 #c5d6a6}.word-card.heard .word-sound{color:white;background:#7fa25c;border-radius:50%;width:24px;height:24px;display:grid;place-items:center;font-size:14px;top:6px;right:8px}
+.word-card.nudge{animation:word-nudge .5s ease-in-out}
+@keyframes word-nudge{20%{transform:translateX(-7px) rotate(-2deg)}40%{transform:translateX(6px) rotate(2deg)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+.words-count{font-size:17px;font-weight:600;color:var(--green);margin:6px 0 0}
+.next.locked{opacity:.45;filter:grayscale(.7);box-shadow:none}

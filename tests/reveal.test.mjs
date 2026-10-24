@@ -26,6 +26,6 @@ test('failed audio never reveals the covered letter',async()=>{
 test('a letter name is said twice with a pause, and stopping cancels the second time',async()=>{
  const h=harness();await flush();const result=h.voice.play('letter-1',null,null,2);await flush();h.ready();assert.equal(await result,true);assert.equal(h.started(),1);
  h.sources[0].onended();assert.equal(h.started(),1,'waits a breath before repeating');await new Promise(r=>setTimeout(r,700));assert.equal(h.started(),2);
- h.sources[1].onended();await new Promise(r=>setTimeout(r,700));assert.equal(h.started(),2,'only twice');
+ assert.ok(!h.events.some(e=>e.phase==='ended'),'not ended between the two readings');h.sources[1].onended();await new Promise(r=>setTimeout(r,700));assert.equal(h.started(),2,'only twice');assert.equal(h.events.at(-1).phase,'ended','announces the end after the last reading');
  const again=h.voice.play('letter-2',null,null,2);await flush();h.ready();await again;h.sources.at(-1).onended();h.voice.stop();await new Promise(r=>setTimeout(r,700));assert.equal(h.started(),3,'stop() cancels the pending repeat');
 });

@@ -47,7 +47,7 @@ Thai Sprout is played sideways. Upright phones and tablets (portrait with a touc
 
 Arriving at a letter plays its name automatically, twice with a short breath between (`TeacherVoice.play(id, fallback, button, 2)`); Listen, the card and the game question also say it twice. Each clip says the name once (`กอ ไก่`), so the AI voice and the original recordings repeat the same way. Every one of the 44 names starts with the consonant + อ (กอ, ขอ, … ฮอ).
 
-After the matching game is solved, three everyday words that use the letter appear (animals, food, fruit, plants, family, school…), from `dist/vocab.js`, with the letter highlighted together with its vowel and tone marks. Tap a card to hear it (`vocab-<letter>-<1..3>` clips). ฃ and ฅ are no longer written and ฌ is almost unused, so their cards use the sound twin (ข, ค, ช) and say so. The word list needs a native speaker's review.
+After the matching game is solved, three everyday words that use the letter appear (animals, food, fruit, plants, family, school…), from `dist/vocab.js`, with the letter highlighted together with its vowel and tone marks. Tap a card to hear it (`vocab-<letter>-<1..3>` clips). Next letter stays locked until each card has been tapped and heard to the end (the voice announces `ended` after the last reading; an interrupted word must be heard again). A word whose sound cannot load counts once tapped, so missing audio never blocks a child. Tests: `node --test tests/word-friends.test.mjs`. ฃ and ฅ are no longer written and ฌ is almost unused, so their cards use the sound twin (ข, ค, ช) and say so. The word list needs a native speaker's review.
 
 ## Letter reveal and illustrated writing modes
 
