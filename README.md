@@ -14,7 +14,7 @@ Open http://localhost:5173. Serve through HTTP; opening index.html as a file doe
 
 ## iPad
 
-Open the published URL in Safari. The hosted version initially has owner-only access and may require the owner's sign-in. Tap the audio buttons to start playback. Adjust media volume. Thai letter-name audio is bundled. Word-only Thai speech uses an available Thai device voice, falling back to the bundled full letter-name-and-word recording. English explanations require an English speech voice. Speech synthesis availability and voice quality vary by device.
+Open the published URL in Safari. The hosted version is public and does not require a ChatGPT sign-in. Tap the audio buttons to start playback. Adjust media volume. Thai letter-name audio is bundled. Word-only Thai speech uses an available Thai device voice, falling back to the bundled full letter-name-and-word recording. English explanations require an English speech voice. Speech synthesis availability and voice quality vary by device.
 
 Drawing uses Pointer Events, pointer capture, touch-action:none and device-pixel-ratio canvas scaling. It supports finger, mouse and Apple Pencil input, undo, clear and PNG export. Learning progress is in browser localStorage only; drawings stay in memory during the visit and clear on refresh. No handwriting accuracy grading is performed.
 
