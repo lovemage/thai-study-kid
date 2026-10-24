@@ -52,6 +52,7 @@ function render(){window.SpeechPractice?.cancel();stopSound();padObserver?.disco
  // The sign-in page works either way up; only the islands ask for landscape.
  document.documentElement.classList.toggle('on-login',state.screen==='login'||!member);
  if(state.screen==='login'||!member){state.screen='login';$('#app').innerHTML=`<main class="login-main">${loginHTML()}</main>`;mountLogin();return}
+ deviceTip();
  const lesson=state.screen==='lesson',step=['learn','write','play'].indexOf(state.tab);
  $('#app').innerHTML=`<header><button class="home-button" id="home" aria-label="${t('Map: choose an island','選擇小島')}"><span aria-hidden="true">🗺️</span> ${t('Map','選擇小島')}</button><div class="brand">${sprout}<strong>thai sprout<span>.</span></strong></div><div class="header-actions">${accountHTML()}<button id="parents" class="parents-button">${t('Grown-ups','家長')}</button></div></header><main>${lesson?`<div class="lesson-top"><span>${state.explorer?t('Letter explorer','字母探索'):t(`${C().name} · Letter ${C().ids.indexOf(state.id)+1} of 4`,`${C().zh}・第 ${C().ids.indexOf(state.id)+1} 個字母`)}</span><div class="step-dots" aria-label="${t('Step','步驟')} ${step+1} / 3">${[0,1,2].map(i=>`<i class="${i<=step?'filled':''}"></i>`).join('')}</div></div><section class="lesson-card"><div class="step-title"><span class="number">${step+1}</span><h1>${state.tab==='learn'?t('Listen & say','聽一聽，說一說'):state.tab==='write'?t('Let’s write','來寫字吧'):t('Find my friend','找找我的朋友')}</h1></div><div class="coach" role="status"><span class="coach-face">${sprout}</span><p id="hint-text">${defaultHint()}</p><button id="hint" class="hint-button" aria-label="${t('Hint','提示')}"><span aria-hidden="true">💡</span>${t('Hint','提示')}</button></div>${state.tab==='learn'?learnHTML():state.tab==='write'?writeHTML():quizHTML()}<div class="bottom-bar"><button class="back" id="back">← ${previousLetter()?t('Previous letter','上一個字母'):t('Map','選擇小島')}</button><button class="next" id="next">${state.tab==='play'?t('Next letter','下一個字母'):t('Next','下一步')} →</button></div></section>`:state.screen==='home'?homeHTML():state.screen==='library'?libraryHTML():completeHTML()}</main>`;
  bind();if(state.screen==='home')reviveIslands();if(lesson&&state.tab==='write'){setupPad();loadDemo()}if(lesson&&state.tab==='play'){if(quiz?.words){bindWords();refreshWords()}else bindQuiz()}if(lesson)prefetchVoices();if(lesson&&state.tab==='learn')window.SpeechPractice?.mount(L());
@@ -167,6 +168,14 @@ function loginButtons(A){const last=`<span class="last-used">${t('Last used','�
  const google=A.available?`<div class="login-option">${lastLogin==='google'?last:''}<div class="google-pill"><div id="google-login" class="google-slot"></div></div></div>`:'',
   line=A.lineAvailable?`<div class="login-option">${lastLogin==='line'?last:''}<a class="line-login" href="/api/auth/line">${lineMark}<span>${t('Log in with LINE','使用 LINE 登入')}</span></a></div>`:'';
  return lastLogin==='line'?line+google:google+line}
+// On a phone, a note once per visit after sign-in: the lessons are laid out for tablet and computer screens.
+// It follows the device's own language rather than the app's, so whoever holds the phone can read it.
+function deviceTip(){if(deviceTip.done)return;deviceTip.done=true;
+ if(!matchMedia('(pointer: coarse)').matches||Math.min(screen.width,screen.height)>=600)return;
+ try{if(sessionStorage.getItem('thai-sprout-device-tip'))return;sessionStorage.setItem('thai-sprout-device-tip','1')}catch{}
+ const zh=browserLang()==='zh',d=document.createElement('dialog');d.className='device-tip';d.lang=zh?'zh-Hant':'en';
+ d.innerHTML=`<div class="device-tip-sprout">${sprout}</div><h3>${zh?'建議在 iPad、Android 平板或電腦上使用':'Best on an iPad, Android tablet or computer'}</h3><p>${zh?'Thai Sprout 是專為這些大螢幕裝置設計的，在手機上有些畫面會比較擠。':'Thai Sprout is designed for these larger screens. On a phone, some pages will feel cramped.'}</p><button class="dialog-button">${zh?'知道了':'Got it'}</button>`;
+ d.querySelector('button').onclick=()=>d.close();d.addEventListener('close',()=>d.remove());document.body.append(d);d.showModal()}
 function mountLogin(){window.SproutAccount?.mountButton($('#google-login'),state.lang);$$('[data-lang]').forEach(b=>b.onclick=()=>{state.lang=b.dataset.lang;langChosen=true;saveLocal();render()})}
 // Runs at start and after signing in. The server merges a guest's progress into the account, or hands back the account's own record.
 // Offline with a remembered member, the islands stay open; the cloud copy catches up later.

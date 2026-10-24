@@ -142,9 +142,10 @@ body{overflow-x:hidden}.map-screen{text-align:center;padding:0 0 12px}.map-scree
 .answers .answer-choice{position:relative;perspective:800px;border:0;background:transparent;box-shadow:none;isolation:isolate;padding:0;height:140px;width:132px;border-radius:25px;-webkit-tap-highlight-color:transparent}.answer-turn{position:absolute;inset:0;display:block;transform-style:preserve-3d;transition:transform .78s cubic-bezier(.22,.75,.25,1);transition-delay:var(--card-delay)}.cards-revealed .answer-turn{transform:rotateY(180deg)}.answer-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:24px;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid #d6dfc4;box-shadow:0 5px 0 #cdd7bb;overflow:hidden}.answer-cover{flex-direction:column;background:radial-gradient(circle,#eef3de 0 2px,transparent 3px) 0 0/20px 20px,#e1eacb;color:#6b8451;transform:rotateY(0)}.answer-cover::before{content:'';position:absolute;inset:7px;border:1.5px dashed #b7c99a;border-radius:17px}.answer-sprout{height:42px;width:42px;margin-top:-4px}.answer-sprout svg{height:100%;width:100%}.answer-question{font-size:48px;font-weight:600;line-height:1.05}.answer-front{background:#fffefa;transform:rotateY(180deg);color:var(--green);font-size:68px}.answer-dots{position:absolute;bottom:12px;display:flex;gap:5px;opacity:0}.answer-dots i{width:5px;height:5px;border-radius:50%;background:#6a8450}.cards-waiting .answer-dots{opacity:1}.cards-waiting .answer-dots i{animation:seed-wait .85s ease-in-out infinite}.cards-waiting .answer-dots i:nth-child(2){animation-delay:.14s}.cards-waiting .answer-dots i:nth-child(3){animation-delay:.28s}.cards-waiting .answer-sprout{animation:seed-sway 1.8s ease-in-out infinite;animation-delay:var(--card-delay)}.answers .correct .answer-front{background:#e4edc7;border-color:#90a66d}.answers .try-again .answer-front{background:#fde3c8;border-color:#e6a774}.answers .answer-choice.correct,.answers .answer-choice.try-again{background:transparent}.answers:not(.cards-revealed) .answer-choice:active{transform:translateY(2px)}
 @media(max-width:560px){.answers .answer-choice{height:116px;width:min(100px,28vw);border-radius:21px}.answer-face{border-radius:20px}.answer-front{font-size:56px}.answer-sprout{height:34px;width:34px}.answer-question{font-size:40px}.answer-dots{bottom:10px}}
 @media(prefers-reduced-motion:reduce){.answer-turn{transition:none}.cards-waiting .answer-dots i{opacity:1}}
-/* iPad held sideways (every model from mini 1133x744 to Pro 13" 1376x1032, with or without Safari's toolbars):
+/* iPad held sideways (every model from mini 1133x744 to Pro 13" 1376x1032, with or without Safari's toolbars; phones sideways are
+   too short for this and scroll instead, see the end of this file):
    each lesson screen fits one view with no scrolling. Title and coach share a row, and the content area stretches to the height left. */
-@media(orientation:landscape) and (min-width:900px){
+@media(orientation:landscape) and (min-width:900px) and (min-height:600px){
  header{height:66px;padding:8px 28px}.home-button{min-height:52px;padding:6px 18px}.brand svg{width:40px;height:40px}
  main{max-width:1180px;padding-top:2px;padding-bottom:8px}
  .map{--h:clamp(360px,calc(100vh - 205px),780px);--h:clamp(360px,calc(100dvh - 205px),780px)}
@@ -221,7 +222,7 @@ body{overflow-x:hidden}.map-screen{text-align:center;padding:0 0 12px}.map-scree
 .word-mean{font-size:16px;color:var(--muted)}
 .word-sound{position:absolute;top:8px;right:12px;color:var(--green);font-size:17px}
 @keyframes word-in{from{opacity:0;transform:translateY(16px) scale(.85)}to{opacity:1;transform:none}}
-@media(orientation:landscape) and (min-width:900px){.word-cards{margin:6px 0;gap:24px}.word-card{max-width:270px;padding:16px 12px 18px}.word-emoji{font-size:clamp(48px,11vh,88px)}.word-th{font-size:clamp(28px,5.6vh,44px)}.word-mean{font-size:18px}.word-friends h2{font-size:26px}}
+@media(orientation:landscape) and (min-width:900px) and (min-height:600px){.word-cards{margin:6px 0;gap:24px}.word-card{max-width:270px;padding:16px 12px 18px}.word-emoji{font-size:clamp(48px,11vh,88px)}.word-th{font-size:clamp(28px,5.6vh,44px)}.word-mean{font-size:18px}.word-friends h2{font-size:26px}}
 /* Thai Sprout is played with the device held sideways; upright phones and tablets get a turn-me screen. */
 #rotate{display:none}
 @media(orientation:portrait) and (pointer:coarse){html:not(.on-login) #rotate{display:flex;position:fixed;inset:0;z-index:1000;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px 16px;background:var(--paper);text-align:center}}
@@ -229,7 +230,7 @@ body{overflow-x:hidden}.map-screen{text-align:center;padding:0 0 12px}.map-scree
 #rotate h2{font-size:26px;margin:0}#rotate p{font-size:17px;color:var(--muted);margin:0;max-width:340px;line-height:1.6}
 html[lang="zh-Hant"] #rotate [lang="en"],html:not([lang="zh-Hant"]) #rotate [lang="zh-Hant"]{display:none}
 @keyframes rotate-hint{0%,25%{transform:rotate(0)}55%,85%{transform:rotate(-90deg)}100%{transform:rotate(0)}}
-@media(orientation:landscape) and (min-width:900px){.lesson-card>.word-friends{grid-column:1/-1;grid-row:2;min-height:0;height:100%;margin:0}}
+@media(orientation:landscape) and (min-width:900px) and (min-height:600px){.lesson-card>.word-friends{grid-column:1/-1;grid-row:2;min-height:0;height:100%;margin:0}}
 .word-card.heard{border-color:#9bb877;box-shadow:0 5px 0 #c5d6a6}.word-card.heard .word-sound{color:white;background:#7fa25c;border-radius:50%;width:24px;height:24px;display:grid;place-items:center;font-size:14px;top:6px;right:8px}
 .word-card.nudge{animation:word-nudge .5s ease-in-out}
 @keyframes word-nudge{20%{transform:translateX(-7px) rotate(-2deg)}40%{transform:translateX(6px) rotate(2deg)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
@@ -401,3 +402,19 @@ dialog h3{color:var(--ink)}dialog p{color:var(--ink-soft)}
 /* sign-in: a small tag over the button this device used last time */
 .login-option{position:relative;display:flex;justify-content:center}
 .last-used{position:absolute;top:-11px;right:-6px;z-index:1;background:linear-gradient(var(--honey-light),var(--honey));color:#5a3f12;border:2px solid var(--edge);border-radius:999px;padding:1px 9px;font-size:12px;font-weight:700;line-height:1.5;box-shadow:var(--shadow-pill);pointer-events:none}
+/* a phone held sideways: the browser's toolbar leaves about 300px of height, so the header, Home Screen invitation and map shrink
+   and the lessons scroll instead of squeezing into one view */
+@media(orientation:landscape) and (max-height:599px){
+ header{height:54px;padding:4px 16px;gap:8px}.home-button{min-height:44px;height:44px;padding:4px 14px}.brand svg{width:32px;height:32px}.brand strong{font-size:19px}
+ .account-chip,.parents-button{min-height:44px;height:44px}
+ main{padding-top:4px;padding-bottom:12px}
+ .install-banner{padding:4px 10px;gap:10px;margin-bottom:6px}.install-banner img{width:36px;height:36px}.install-banner span{display:none}.install-open{min-height:40px;padding:6px 14px}.install-dismiss{min-height:40px}
+ .map-screen{padding-bottom:4px}.map-screen h1{display:none}.map-screen>p{font-size:14px;margin:0 0 6px}.map-screen>.swipe-hint{display:none}
+ /* below about 260px the island names overlap, so a very short screen scrolls a little instead */
+ .map{--h:clamp(260px,calc(100vh - 92px),780px);--h:clamp(260px,calc(100dvh - 92px),780px)}
+ body:has(.install-banner) .map{--h:clamp(260px,calc(100vh - 92px),780px);--h:clamp(260px,calc(100dvh - 92px),780px)}
+}
+/* the phone note shown after sign-in */
+.device-tip{max-width:420px;text-align:center}.device-tip-sprout .mascot{width:76px;height:76px}
+.device-tip h3{font-size:21px;line-height:1.4;margin:6px 0 8px}.device-tip p{font-size:16px;line-height:1.6;margin:0 0 18px}
+@media(max-height:599px){.device-tip{padding:14px 22px}.device-tip-sprout .mascot{width:46px;height:46px}.device-tip h3{font-size:19px;margin:0 0 4px}.device-tip p{font-size:15px;margin:0 0 10px}}
