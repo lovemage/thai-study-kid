@@ -360,6 +360,14 @@ dialog h3{color:var(--ink)}dialog p{color:var(--ink-soft)}
 .ls-isle .island-art{filter:none;animation:none}.ls-isle .alive-only{opacity:1}.ls-isle .wither-only{display:none}
 @keyframes sticker-float{50%{translate:0 -8px}}
 .login-screen{position:relative;z-index:1}
+/* the stickers sit inside the sign-in screen, so the card and language switch must stack above them */
+.login-lang,.login-card{position:relative;z-index:1}
+/* held upright the card fills the middle, so the stickers move to the top and bottom edges */
+@media(orientation:portrait){
+ .ls-k{left:6%;top:4%}.ls-leaf{left:30%;right:auto;top:6%}.ls-star{right:30%;top:3%}.ls-kho{right:6%;top:5%}
+ .ls-kh{left:6%;top:auto;bottom:5%}.ls-apple{left:30%;top:auto;bottom:3%}.ls-ng{right:32%;top:auto;bottom:6%}
+ .ls-isle{left:auto;right:4%;top:auto;bottom:2%;width:clamp(90px,11vh,140px)}
+}
 .login-card{border-radius:38px}
 .login-sprout svg{width:132px;height:132px;overflow:visible;animation:isle-bob 4s ease-in-out infinite}
 .login-card h1{font-size:40px}
