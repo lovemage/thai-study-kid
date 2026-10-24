@@ -1,0 +1,554 @@
+{
+  "letter-1": {
+    "lang": "th",
+    "text": "กอ ไก่... กอ ไก่"
+  },
+  "word-1": {
+    "lang": "th",
+    "text": "ไก่... ไก่"
+  },
+  "explain-1": {
+    "lang": "en",
+    "text": "Look at this picture. chicken. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-2": {
+    "lang": "th",
+    "text": "ขอ ไข่... ขอ ไข่"
+  },
+  "word-2": {
+    "lang": "th",
+    "text": "ไข่... ไข่"
+  },
+  "explain-2": {
+    "lang": "en",
+    "text": "Look at this picture. egg. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-3": {
+    "lang": "th",
+    "text": "ฃอ ขวด... ฃอ ขวด"
+  },
+  "word-3": {
+    "lang": "th",
+    "text": "ขวด... ขวด"
+  },
+  "explain-3": {
+    "lang": "en",
+    "text": "Look at this picture. bottle. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-4": {
+    "lang": "th",
+    "text": "คอ ควาย... คอ ควาย"
+  },
+  "word-4": {
+    "lang": "th",
+    "text": "ควาย... ควาย"
+  },
+  "explain-4": {
+    "lang": "en",
+    "text": "Look at this picture. buffalo. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-5": {
+    "lang": "th",
+    "text": "ฅอ คน... ฅอ คน"
+  },
+  "word-5": {
+    "lang": "th",
+    "text": "คน... คน"
+  },
+  "explain-5": {
+    "lang": "en",
+    "text": "Look at this picture. person. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-6": {
+    "lang": "th",
+    "text": "ฆอ ระฆัง... ฆอ ระฆัง"
+  },
+  "word-6": {
+    "lang": "th",
+    "text": "ระฆัง... ระฆัง"
+  },
+  "explain-6": {
+    "lang": "en",
+    "text": "Look at this picture. bell. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-7": {
+    "lang": "th",
+    "text": "งอ งู... งอ งู"
+  },
+  "word-7": {
+    "lang": "th",
+    "text": "งู... งู"
+  },
+  "explain-7": {
+    "lang": "en",
+    "text": "Look at this picture. snake. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-8": {
+    "lang": "th",
+    "text": "จอ จาน... จอ จาน"
+  },
+  "word-8": {
+    "lang": "th",
+    "text": "จาน... จาน"
+  },
+  "explain-8": {
+    "lang": "en",
+    "text": "Look at this picture. plate. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-9": {
+    "lang": "th",
+    "text": "ฉอ ฉิ่ง... ฉอ ฉิ่ง"
+  },
+  "word-9": {
+    "lang": "th",
+    "text": "ฉิ่ง... ฉิ่ง"
+  },
+  "explain-9": {
+    "lang": "en",
+    "text": "Look at this picture. small cymbals. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-10": {
+    "lang": "th",
+    "text": "ชอ ช้าง... ชอ ช้าง"
+  },
+  "word-10": {
+    "lang": "th",
+    "text": "ช้าง... ช้าง"
+  },
+  "explain-10": {
+    "lang": "en",
+    "text": "Look at this picture. elephant. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-11": {
+    "lang": "th",
+    "text": "ซอ โซ่... ซอ โซ่"
+  },
+  "word-11": {
+    "lang": "th",
+    "text": "โซ่... โซ่"
+  },
+  "explain-11": {
+    "lang": "en",
+    "text": "Look at this picture. chain. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-12": {
+    "lang": "th",
+    "text": "ฌอ เฌอ... ฌอ เฌอ"
+  },
+  "word-12": {
+    "lang": "th",
+    "text": "เฌอ... เฌอ"
+  },
+  "explain-12": {
+    "lang": "en",
+    "text": "Look at this picture. tree. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-13": {
+    "lang": "th",
+    "text": "ญอ หญิง... ญอ หญิง"
+  },
+  "word-13": {
+    "lang": "th",
+    "text": "หญิง... หญิง"
+  },
+  "explain-13": {
+    "lang": "en",
+    "text": "Look at this picture. woman. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-14": {
+    "lang": "th",
+    "text": "ฎอ ชฎา... ฎอ ชฎา"
+  },
+  "word-14": {
+    "lang": "th",
+    "text": "ชฎา... ชฎา"
+  },
+  "explain-14": {
+    "lang": "en",
+    "text": "Look at this picture. headdress. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-15": {
+    "lang": "th",
+    "text": "ฏอ ปฏัก... ฏอ ปฏัก"
+  },
+  "word-15": {
+    "lang": "th",
+    "text": "ปฏัก... ปฏัก"
+  },
+  "explain-15": {
+    "lang": "en",
+    "text": "Look at this picture. goad. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-16": {
+    "lang": "th",
+    "text": "ฐอ ฐาน... ฐอ ฐาน"
+  },
+  "word-16": {
+    "lang": "th",
+    "text": "ฐาน... ฐาน"
+  },
+  "explain-16": {
+    "lang": "en",
+    "text": "Look at this picture. pedestal. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-17": {
+    "lang": "th",
+    "text": "ฑอ มณโฑ... ฑอ มณโฑ"
+  },
+  "word-17": {
+    "lang": "th",
+    "text": "มณโฑ... มณโฑ"
+  },
+  "explain-17": {
+    "lang": "en",
+    "text": "Look at this picture. Montho. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-18": {
+    "lang": "th",
+    "text": "ฒอ ผู้เฒ่า... ฒอ ผู้เฒ่า"
+  },
+  "word-18": {
+    "lang": "th",
+    "text": "ผู้เฒ่า... ผู้เฒ่า"
+  },
+  "explain-18": {
+    "lang": "en",
+    "text": "Look at this picture. elder. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-19": {
+    "lang": "th",
+    "text": "ณอ เณร... ณอ เณร"
+  },
+  "word-19": {
+    "lang": "th",
+    "text": "เณร... เณร"
+  },
+  "explain-19": {
+    "lang": "en",
+    "text": "Look at this picture. novice monk. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-20": {
+    "lang": "th",
+    "text": "ดอ เด็ก... ดอ เด็ก"
+  },
+  "word-20": {
+    "lang": "th",
+    "text": "เด็ก... เด็ก"
+  },
+  "explain-20": {
+    "lang": "en",
+    "text": "Look at this picture. child. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-21": {
+    "lang": "th",
+    "text": "ตอ เต่า... ตอ เต่า"
+  },
+  "word-21": {
+    "lang": "th",
+    "text": "เต่า... เต่า"
+  },
+  "explain-21": {
+    "lang": "en",
+    "text": "Look at this picture. turtle. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-22": {
+    "lang": "th",
+    "text": "ถอ ถุง... ถอ ถุง"
+  },
+  "word-22": {
+    "lang": "th",
+    "text": "ถุง... ถุง"
+  },
+  "explain-22": {
+    "lang": "en",
+    "text": "Look at this picture. bag. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-23": {
+    "lang": "th",
+    "text": "ทอ ทหาร... ทอ ทหาร"
+  },
+  "word-23": {
+    "lang": "th",
+    "text": "ทหาร... ทหาร"
+  },
+  "explain-23": {
+    "lang": "en",
+    "text": "Look at this picture. soldier. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-24": {
+    "lang": "th",
+    "text": "ธอ ธง... ธอ ธง"
+  },
+  "word-24": {
+    "lang": "th",
+    "text": "ธง... ธง"
+  },
+  "explain-24": {
+    "lang": "en",
+    "text": "Look at this picture. flag. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-25": {
+    "lang": "th",
+    "text": "นอ หนู... นอ หนู"
+  },
+  "word-25": {
+    "lang": "th",
+    "text": "หนู... หนู"
+  },
+  "explain-25": {
+    "lang": "en",
+    "text": "Look at this picture. mouse. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-26": {
+    "lang": "th",
+    "text": "บอ ใบไม้... บอ ใบไม้"
+  },
+  "word-26": {
+    "lang": "th",
+    "text": "ใบไม้... ใบไม้"
+  },
+  "explain-26": {
+    "lang": "en",
+    "text": "Look at this picture. leaf. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-27": {
+    "lang": "th",
+    "text": "ปอ ปลา... ปอ ปลา"
+  },
+  "word-27": {
+    "lang": "th",
+    "text": "ปลา... ปลา"
+  },
+  "explain-27": {
+    "lang": "en",
+    "text": "Look at this picture. fish. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-28": {
+    "lang": "th",
+    "text": "ผอ ผึ้ง... ผอ ผึ้ง"
+  },
+  "word-28": {
+    "lang": "th",
+    "text": "ผึ้ง... ผึ้ง"
+  },
+  "explain-28": {
+    "lang": "en",
+    "text": "Look at this picture. bee. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-29": {
+    "lang": "th",
+    "text": "ฝอ ฝา... ฝอ ฝา"
+  },
+  "word-29": {
+    "lang": "th",
+    "text": "ฝา... ฝา"
+  },
+  "explain-29": {
+    "lang": "en",
+    "text": "Look at this picture. lid. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-30": {
+    "lang": "th",
+    "text": "พอ พาน... พอ พาน"
+  },
+  "word-30": {
+    "lang": "th",
+    "text": "พาน... พาน"
+  },
+  "explain-30": {
+    "lang": "en",
+    "text": "Look at this picture. tray with a pedestal. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-31": {
+    "lang": "th",
+    "text": "ฟอ ฟัน... ฟอ ฟัน"
+  },
+  "word-31": {
+    "lang": "th",
+    "text": "ฟัน... ฟัน"
+  },
+  "explain-31": {
+    "lang": "en",
+    "text": "Look at this picture. tooth. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-32": {
+    "lang": "th",
+    "text": "ภอ สำเภา... ภอ สำเภา"
+  },
+  "word-32": {
+    "lang": "th",
+    "text": "สำเภา... สำเภา"
+  },
+  "explain-32": {
+    "lang": "en",
+    "text": "Look at this picture. sailing ship. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-33": {
+    "lang": "th",
+    "text": "มอ ม้า... มอ ม้า"
+  },
+  "word-33": {
+    "lang": "th",
+    "text": "ม้า... ม้า"
+  },
+  "explain-33": {
+    "lang": "en",
+    "text": "Look at this picture. horse. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-34": {
+    "lang": "th",
+    "text": "ยอ ยักษ์... ยอ ยักษ์"
+  },
+  "word-34": {
+    "lang": "th",
+    "text": "ยักษ์... ยักษ์"
+  },
+  "explain-34": {
+    "lang": "en",
+    "text": "Look at this picture. giant. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-35": {
+    "lang": "th",
+    "text": "รอ เรือ... รอ เรือ"
+  },
+  "word-35": {
+    "lang": "th",
+    "text": "เรือ... เรือ"
+  },
+  "explain-35": {
+    "lang": "en",
+    "text": "Look at this picture. boat. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-36": {
+    "lang": "th",
+    "text": "ลอ ลิง... ลอ ลิง"
+  },
+  "word-36": {
+    "lang": "th",
+    "text": "ลิง... ลิง"
+  },
+  "explain-36": {
+    "lang": "en",
+    "text": "Look at this picture. monkey. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-37": {
+    "lang": "th",
+    "text": "วอ แหวน... วอ แหวน"
+  },
+  "word-37": {
+    "lang": "th",
+    "text": "แหวน... แหวน"
+  },
+  "explain-37": {
+    "lang": "en",
+    "text": "Look at this picture. ring. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-38": {
+    "lang": "th",
+    "text": "ศอ ศาลา... ศอ ศาลา"
+  },
+  "word-38": {
+    "lang": "th",
+    "text": "ศาลา... ศาลา"
+  },
+  "explain-38": {
+    "lang": "en",
+    "text": "Look at this picture. pavilion. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-39": {
+    "lang": "th",
+    "text": "ษอ ฤๅษี... ษอ ฤๅษี"
+  },
+  "word-39": {
+    "lang": "th",
+    "text": "ฤๅษี... ฤๅษี"
+  },
+  "explain-39": {
+    "lang": "en",
+    "text": "Look at this picture. hermit. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-40": {
+    "lang": "th",
+    "text": "สอ เสือ... สอ เสือ"
+  },
+  "word-40": {
+    "lang": "th",
+    "text": "เสือ... เสือ"
+  },
+  "explain-40": {
+    "lang": "en",
+    "text": "Look at this picture. tiger. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-41": {
+    "lang": "th",
+    "text": "หอ หีบ... หอ หีบ"
+  },
+  "word-41": {
+    "lang": "th",
+    "text": "หีบ... หีบ"
+  },
+  "explain-41": {
+    "lang": "en",
+    "text": "Look at this picture. chest. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-42": {
+    "lang": "th",
+    "text": "ฬอ จุฬา... ฬอ จุฬา"
+  },
+  "word-42": {
+    "lang": "th",
+    "text": "จุฬา... จุฬา"
+  },
+  "explain-42": {
+    "lang": "en",
+    "text": "Look at this picture. star-shaped kite. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-43": {
+    "lang": "th",
+    "text": "ออ อ่าง... ออ อ่าง"
+  },
+  "word-43": {
+    "lang": "th",
+    "text": "อ่าง... อ่าง"
+  },
+  "explain-43": {
+    "lang": "en",
+    "text": "Look at this picture. basin. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "letter-44": {
+    "lang": "th",
+    "text": "ฮอ นกฮูก... ฮอ นกฮูก"
+  },
+  "word-44": {
+    "lang": "th",
+    "text": "นกฮูก... นกฮูก"
+  },
+  "explain-44": {
+    "lang": "en",
+    "text": "Look at this picture. owl. This is its Thai letter friend. Listen to the Thai sound, then say it with me. Your turn!"
+  },
+  "hint-listen": {
+    "lang": "en",
+    "text": "Tap the big sound button. Listen carefully, then say it with me. You can listen again!"
+  },
+  "hint-write": {
+    "lang": "en",
+    "text": "First, watch the moving line. Now use your finger to follow the pale letter. Go slowly. You can do it!"
+  },
+  "hint-play": {
+    "lang": "en",
+    "text": "Look at the picture. Which letter is its friend? Tap one letter. Take your time!"
+  },
+  "try-again": {
+    "lang": "en",
+    "text": "A good try! Have another look. You can listen to the sound again."
+  },
+  "well-done": {
+    "lang": "en",
+    "text": "You found it! Lovely work. Ready for our next little adventure?"
+  },
+  "chapter-done": {
+    "lang": "en",
+    "text": "Look how much you have learned! Give yourself a little clap. Now stretch your arms and take a break."
+  }
+}
