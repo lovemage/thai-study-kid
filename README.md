@@ -12,6 +12,8 @@ Generated WAV files are cached in Netlify Blobs and at the CDN. The function acc
 
 ## Run and deploy
 
+**Every release that changes any file in `dist/` must bump `VERSION` in `dist/sw.js`.** Installed copies keep serving their cached release until a new worker installs; the new one waits until every window of the app is closed, then takes over and deletes older `sprout-pwa-*` caches (progress, lesson audio and the Whisper model are kept). Deploy only from this folder.
+
 `npm ci`, then `npx netlify dev` for the complete application. For the static interface, `python -m http.server 5173 --directory dist`; static previews use the production Netlify voice API. Deploy with `npx netlify deploy --prod --site c4a2b956-8f82-43d1-ac2f-fbd084ca5a39 --no-build --dir dist --functions netlify/functions`.
 
 The public site requires no ChatGPT account. Tap a sound button to unlock audio on iPad Safari. Use Safari's Add to Home Screen if desired. Drawing supports Pointer Events, pointer capture, touch-action:none and high-DPI canvases. Progress is saved only in this browser. Drawings last for the visit and are never saved or exported. No handwriting grading is performed.

@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Speech browser verification</title></head><body><h1>Speech browser verification — synthetic teacher audio only</h1><button id="load">Load Whisper WASM</button><button id="test" disabled>Recognize teacher fixture (no microphone)</button><pre id="status">Not started</pre><script type="module">
+import {resample} from '../dist/speech-core.mjs';
+const status=document.querySelector('#status'),worker=new Worker('../dist/speech-worker.mjs',{type:'module'});
+worker.onerror=e=>status.textContent='Worker error: '+e.message;
+worker.onmessage=({data})=>{if(data.type==='progress'){status.textContent='Loading '+data.file+' '+data.status}else{status.textContent=JSON.stringify(data);if(data.type==='ready')document.querySelector('#test').disabled=false}};
+document.querySelector('#load').onclick=()=>worker.postMessage({type:'load'});
+document.querySelector('#test').onclick=async()=>{status.textContent='Recognizing…';const ac=new AudioContext(),buffer=await ac.decodeAudioData(await(await fetch('./teacher-fixture.wav')).arrayBuffer()),audio=resample([buffer.getChannelData(0)],buffer.sampleRate);await ac.close();worker.postMessage({type:'transcribe',id:1,audio},[audio.buffer])};
+</script></body></html>
