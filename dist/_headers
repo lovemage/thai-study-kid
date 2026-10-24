@@ -3,5 +3,3 @@
 /manifest.webmanifest
   Content-Type: application/manifest+json
   Cache-Control: no-cache
-/vendor/*.wasm
-  Content-Type: application/wasm

@@ -8,8 +8,7 @@
   },
   "dependencies": {
     "@netlify/blobs": "11.1.6",
-    "ws": "8.22.0",
-    "@huggingface/transformers": "3.8.1"
+    "ws": "8.22.0"
   },
   "devDependencies": {
     "netlify-cli": "27.14.2"

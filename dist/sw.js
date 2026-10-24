@@ -1,5 +1,5 @@
-const VERSION='sprout-pwa-6';
-const SHELL=[ './','./index.html','./style.css','./data.js','./art.js','./islands.js','./voice.js','./app.js','./drawing.js','./speech.js','./speech-core.mjs','./speech-worker.mjs','./pwa.js','./manifest.webmanifest','./assets/writing.json','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-maskable.png',...Array.from({length:44},(_,i)=>`./assets/letter-${i+1}.mp3`) ];
+const VERSION='sprout-pwa-7';
+const SHELL=[ './','./index.html','./style.css','./data.js','./art.js','./islands.js','./voice.js','./app.js','./drawing.js','./speech.js','./speech-core.mjs','./pwa.js','./manifest.webmanifest','./assets/writing.json','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-maskable.png',...Array.from({length:44},(_,i)=>`./assets/letter-${i+1}.mp3`) ];
 // Do not skipWaiting: a new release activates after all old app windows close.
 // This avoids replacing a lesson while a child is drawing or speaking.
 // Fetch the release straight from the server: a stale browser HTTP cache would otherwise freeze an old file into the new version.
@@ -26,7 +26,7 @@ self.addEventListener('fetch',event=>{
  event.respondWith((async()=>{
   const cache=await caches.open(VERSION),hit=await cache.match(req,{ignoreSearch:true});if(hit)return hit;
   const response=await fetch(req);
-  if(response.ok&&(SHELL.some(path=>new URL(path,self.location).pathname===url.pathname)||url.pathname.startsWith('/vendor/')))await cache.put(req,response.clone());
+  if(response.ok&&SHELL.some(path=>new URL(path,self.location).pathname===url.pathname))await cache.put(req,response.clone());
   return response;
  })());
 });
