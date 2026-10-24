@@ -12,8 +12,16 @@ test('only matching prompt playback reveals quiz; decoding and hint audio do not
  h.run("updateQuizCards({detail:{id:'hint-play',phase:'playing'}})");assert.equal(h.run('quiz.revealed'),false);
  h.run("updateQuizCards({detail:{id:'letter-1',phase:'playing'}})");assert.equal(h.run('quiz.revealed'),true);assert.equal(h.run('quiz.ready'),false);assert(h.nodes['.answers'].classes.has('cards-revealed'));h.timers.forEach(f=>f());assert.equal(h.run('quiz.ready'),true);assert(h.buttons.every(b=>b.attrs['aria-disabled']==='false'));
 });
-test('failed or stale playback leaves answer cards covered',()=>{
- const h=app();h.run("updateQuizCards({detail:{id:'letter-1',phase:'error'}})");assert.equal(h.run('quiz.revealed'),false);h.run("state.screen='home';updateQuizCards({detail:{id:'letter-1',phase:'playing'}})");assert.equal(h.run('quiz.revealed'),false);
+test('failed prompt audio still turns the cards over; playback after leaving the game does not',()=>{
+ const h=app();h.run("state.screen='lesson';updateQuizCards({detail:{id:'letter-1',phase:'error'}})");assert.equal(h.run('quiz.revealed'),true);
+ const s=app();s.run("state.screen='home';updateQuizCards({detail:{id:'letter-1',phase:'playing'}})");assert.equal(s.run('quiz.revealed'),false);
+});
+test('covered cards turn over by themselves when the question sound never comes',()=>{
+ const h=app();h.run("state.screen='lesson';playQuizPrompt=playQuizPrompt");h.run("quiz.asked=true;updateQuizCards({detail:{id:'letter-1',phase:'idle'}})");assert.equal(h.run('quiz.revealed'),true);
+ const s=app();s.run("state.screen='lesson'");const before=s.timers.length;s.run("TeacherVoice={play:()=>new Promise(()=>{})};playQuizPrompt()");assert.equal(s.run('quiz.revealed'),false);s.timers.slice(before).forEach(f=>f());assert.equal(s.run('quiz.revealed'),true);
+});
+test('a letter is learned once written and found; listening is never required',()=>{
+ const h=app();h.run("progress={5:{wrote:true,quiz:true}}");assert.equal(h.run('done(5)'),true);h.run("progress={5:{heard:true,wrote:true}}");assert.equal(h.run('done(5)'),false);
 });
 
 test('home map renders all chapter cards and keeps later islands locked',()=>{const h=app();const html=h.run('homeHTML()');assert.equal((html.match(/data-chapter=/g)||[]).length,h.run('chapters.length'));assert.equal(h.run('unlocked(0)'),true);assert.equal(h.run('unlocked(1)'),false)});
