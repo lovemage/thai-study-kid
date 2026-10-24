@@ -82,3 +82,13 @@ test('LINE start sets a state cookie; a callback with a different state is refus
   assert.equal(r.headers.get('location'),'/?login=failed');assert.ok(!r.headers.getSetCookie().some(c=>c.startsWith('sprout_session=')&&!c.includes('Max-Age=0')));
  }finally{for(const [k,v] of [['SESSION_SECRET',prior.s],['LINE_CHANNEL_SECRET',prior.l]])if(v===undefined)delete process.env[k];else process.env[k]=v}
 });
+test('a new account starts fresh; only the same member\'s own browser progress merges into the account',async()=>{
+ const {readFileSync}=await import('node:fs'),vm=await import('node:vm');
+ const load=serverData=>{const calls=[];const ctx={window:{},document:{addEventListener(){},head:{append(){}}},addEventListener(){},matchMedia:()=>({matches:false}),navigator:{},location:{origin:'https://x'},setTimeout,clearTimeout,
+  fetch:async(url,init={})=>{calls.push(init.method||'GET');const body=init.method==='PUT'?{data:{merged:true}}:{clientId:'c',line:true,user:{id:'google:1',name:'A'},data:serverData};return {ok:true,status:200,json:async()=>body}}};
+  vm.createContext(ctx);vm.runInContext(readFileSync('dist/account.js','utf8'),ctx);return {A:ctx.window.SproutAccount,calls}};
+ let {A,calls}=load(null);let r=await A.start('',{progress:{1:{wrote:true,quiz:true}}});
+ assert.equal(r.replaced,true);assert.equal(JSON.stringify(r.data),'{}');assert.ok(!calls.includes('PUT'),'leftover progress is not uploaded into a new account');
+ ({A,calls}=load({progress:{5:{quiz:true}}}));r=await A.start('line:9',{progress:{1:{wrote:true}}});assert.equal(r.replaced,true);assert.equal(JSON.stringify(r.data),JSON.stringify({progress:{5:{quiz:true}}}));
+ ({A,calls}=load({progress:{5:{quiz:true}}}));r=await A.start('google:1',{progress:{1:{wrote:true}}});assert.ok(calls.includes('PUT'));assert.equal(JSON.stringify(r.data),'{"merged":true}');
+});

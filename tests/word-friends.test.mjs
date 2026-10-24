@@ -41,3 +41,18 @@ test('skipping the game still shows the three words before the next letter, and 
  assert.equal(h.run('quiz.words'),true);assert.equal(h.run('state.id'),1);assert.equal(h.run('!!progress[1]?.quiz'),false);
  h.nodes['#next'].onclick();assert.equal(h.run('state.id'),1,'words still have to be heard');
 });
+test('each page has its own spoken prompt, and Hint repeats the prompt of the page on screen',()=>{
+ const h=app(),p=()=>h.run('pagePrompt()');
+ h.run("state.tab='learn';state.id=7");assert.equal(p(),'explain-7');
+ h.run("state.tab='write'");assert.equal(p(),'hint-write');
+ h.run("state.tab='play';quiz.words=false");assert.equal(p(),'hint-play');
+ h.run("quiz.words=true;quiz.heard=new Set([1])");assert.equal(p(),'intro-words');
+ h.run("quiz.heard=new Set([1,2,3])");assert.equal(p(),'words-done');
+ h.run("state.screen='complete'");assert.equal(p(),'island-done');
+ h.run("state.screen='home'");assert.equal(p(),'intro-map');
+ h.run("state.screen='library'");assert.equal(p(),'intro-library');
+});
+test('arriving at a letter speaks its introduction first, then says the letter name twice',()=>{
+ const h=app(),said=[];h.run("TeacherVoice.play=(id,f,b,times,onEnd)=>{globalThis.__said.push(id+(times>1?' x'+times:''));onEnd?.();return Promise.resolve(true)}");
+ h.run("globalThis.__said=[]");h.run('goLetter(3)');assert.deepEqual(Array.from(h.run('globalThis.__said')),['explain-3','letter-3 x2']);
+});

@@ -52,3 +52,5 @@ const vocab={
 // ฃ and ฅ are no longer written, and ฌ appears almost only in its own lesson word เฌอ: their cards use the sound twin.
 // ฎ keeps its lesson word ชฎา, since the other ฎ words are about rules.
 const vocabTwin={3:'ข',5:'ค',12:'ช'};
+// Switch on once the sticker illustrations are in dist/assets/vocab/ (see docs/design/codex-assets.md).
+const vocabArt=true;

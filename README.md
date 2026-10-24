@@ -25,7 +25,7 @@ The app opens on a sign-in page; a grown-up signs in with Google or LINE before 
 - Netlify Function `netlify/functions/account.mjs` serves `/api/me` (GET record, PUT save, DELETE sign out), `/api/auth/google` and `/api/auth/line[/callback]`. Shared logic and checks are in `netlify/account-core.mjs`.
 - Google: Google Cloud project *Gemini API* (`gen-lang-client-0200659460`), OAuth web client *Thai Sprout Web*. The browser gets a Google ID token (popup; redirect inside the installed app) and the server checks it against Google's keys. LINE: channel `2012186443` under provider *WACA login*; code flow with state and nonce, verified with LINE's verify endpoint.
 - Either way the server then sets its own HttpOnly session cookie for 60 days. Records live in Netlify Blobs store `thai-sprout-members` at `google/<sub>` or `line/<sub>`: profile (name, email for Google, picture) and the learning record. Saves merge, so finished steps never disappear when two devices meet; a grown-up's reset replaces the record.
-- Progress from before signing in joins the account; progress left on a shared device by another member is replaced by the account's own record. Signing out clears progress from the device.
+- Only the same member's own progress in the browser (e.g. made offline) merges into the account. Anything else (another member's, or progress left from before sign-in was required) is replaced by the account's record, so a new account starts at the first island and ก. Signing out clears progress from the device.
 - Environment variables (Netlify, all scopes): `SESSION_SECRET` (32+ random characters) and `LINE_CHANNEL_SECRET`. Client and channel IDs are public and set in `account.mjs`. Allowed origins / callback URLs are the production site and `http://localhost:8888`; add any new domain in both consoles.
 - Terms and privacy pages (English and Chinese): `dist/terms.html`, `dist/privacy.html`. Tests: `node --test tests/account.test.mjs`.
 
@@ -41,6 +41,10 @@ Run `node --test tests/voice.test.mjs` and `node check-assets.cjs`. Tests cover 
 
 API references: https://openrouter.ai/docs/guides/overview/multimodal/tts and https://ai.google.dev/gemini-api/docs/speech-generation.
 
+## Spoken prompt on every page
+
+Every page opens with its own spoken English prompt, and the Hint button repeats the prompt of the page on screen (`pagePrompt()` in `app.js`): the map (`intro-map`, not while an island wakes up), each letter's Listen page (`explain-<id>`, a sentence about that letter's picture; ฃ and ฅ say they are no longer written), Write (`hint-write`), the game (`hint-play`, then the question), a correct answer (`well-done`), the word cards (`intro-words`, then `words-done` once all three are heard), a finished island (`island-done`) and the 44-letter explorer (`intro-library`). `introThen()` plays the prompt and starts the next sound when it ends; if it has not started within 6 s or cannot play, the page carries on without it. Texts are in `make-voice-catalog.cjs`.
+
 ## Landscape, letter names twice, word friends
 
 Thai Sprout is played sideways. Upright phones and tablets (portrait with a touch screen) see a turn-the-device screen and sound stops; the installed app asks for landscape (`orientation` in the manifest; iPadOS ignores it, so the screen covers that case).
@@ -50,6 +54,12 @@ Arriving at a letter plays its name automatically, twice with a short breath bet
 After the matching game is solved, three everyday words that use the letter appear (animals, food, fruit, plants, family, school…), from `dist/vocab.js`, with the letter highlighted together with its vowel and tone marks. Tap a card to hear it (`vocab-<letter>-<1..3>` clips). Next letter stays locked until each card has been tapped and heard to the end (the voice announces `ended` after the last reading; an interrupted word must be heard again). A word whose sound cannot load counts once tapped, so missing audio never blocks a child. Every letter ends with its words: tapping Next before they appear, or without solving the game, brings them up first (a skipped game leaves the letter unfinished).
 
 In a lesson, the top-left **Map** (選擇小島) button returns to the island map; the bottom **Previous letter** button goes to the previous letter on the island from any step (wrapping in the explorer), and reads **Map** on an island's first letter. Tests: `node --test tests/word-friends.test.mjs`. ฃ and ฅ are no longer written and ฌ is almost unused, so their cards use the sound twin (ข, ค, ช) and say so. The word list needs a native speaker's review.
+
+## Look: Korean sticker style
+
+The design follows Midjourney drafts chosen by the owner (`midjourney/`; prompts in `docs/design/midjourney-prompts.md`): die-cut stickers with white edges, puffy pill buttons, paper grain, pastel cards. Two SVG filters in `index.html` (`#sticker` for 300-unit island art, `#sticker-sm` for the mascot and small icons) draw the white die-cut edge and soft shadow; animated sky pieces on the islands stay outside the filter. The mascot is a bean-shaped sprout (`sprout` in `app.js`). The design system is the last block of `style.css`: tokens plus eight component families (page, sheet, panel, sticker tile, buttons, chips and progress, bubbles, sea map), documented in `docs/design/ui-system.md`. Paper and sea textures come from Codex (`docs/design/codex-backgrounds.md`, `dist/assets/ui/`) and switch on with `class="ui-art"` on `<html>`; until then CSS stand-ins show.
+
+Each island also shows its four letter pictures on the beach as sticker residents (`islandResidents()` in `islands.js`): hidden while it sleeps, they grow back one by one when it wakes. Letter pictures (one per letter, on the Listen page and in the game) come from `docs/design/codex-letters.md` (`dist/assets/letters/<id>.webp`, switch `letterArt` in `data.js`; the built-in drawings are the fallback). Word-card illustrations are made outside the code: `docs/design/codex-assets.md` is the brief (132 WebP stickers in `dist/assets/vocab/<letter>-<1..3>.webp`). Until `vocabArt` in `dist/vocab.js` is `true` the cards show emoji, and a missing file falls back to its emoji. The service worker keeps seen illustrations for offline use.
 
 ## Letter reveal and illustrated writing modes
 

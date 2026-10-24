@@ -24,7 +24,8 @@ window.TeacherVoice=(()=>{
  async function status(){try{let r=await fetch(`${base}/api/voice?status=1`,{cache:'no-store'});let j=await r.json();configured=j.configured===true;return {configured,...j}}catch{configured=false;return{configured:false}}}
  function prefetch(id){if(configured===false||buffers.has(id)||Date.now()<apiPausedUntil)return;download(apiURL(id),28000,true).promise.catch(()=>{})}
  // times: how often to say it in a row (a letter name is heard twice), with a short breath between.
- async function play(id,fallback,button,times=1){
+ // onEnd: called once the last reading finishes on its own (not when it is stopped), so the next sound can follow.
+ async function play(id,fallback,button,times=1,onEnd){
   const AC=window.AudioContext||window.webkitAudioContext;
   if(!AC){setHint(tr('Read the words together. This browser cannot play the teacher voice.','一起讀讀文字吧。這個瀏覽器無法播放老師語音。'));return false}
   context??=new AC();const unlocked=context.resume();
@@ -44,7 +45,7 @@ window.TeacherVoice=(()=>{
   if(ticket!==generation)return false;
   busyId=null;playingId=id;
   const say=left=>{source=context.createBufferSource();source.buffer=buffer;source.connect(context.destination);
-   source.onended=()=>{if(ticket!==generation)return;if(left>1)gapTimer=setTimeout(()=>{if(ticket===generation)say(left-1)},650);else{playingId=null;mark(null);announce(id,'ended')}};source.start()};
+   source.onended=()=>{if(ticket!==generation)return;if(left>1)gapTimer=setTimeout(()=>{if(ticket===generation)say(left-1)},650);else{playingId=null;mark(null);announce(id,'ended');onEnd?.()}};source.start()};
   say(times);mark(button,'playing');announce(id,'playing');
   if(backup)toast(tr('Playing the original Thai recording.','播放泰語原聲錄音。'));return true;
  }

@@ -58,3 +58,5 @@ const chapters=[
 {name:'Jungle Tree Island',zh:'叢林大樹島',ids:[33,34,35,36]},
 {name:'Tiger Forest',zh:'老虎森林',ids:[37,38,39,40]},
 {name:'Owl Treasure Island',zh:'貓頭鷹寶藏島',ids:[41,42,43,44]}];
+// Switch on once the letter pictures are in dist/assets/letters/<id>.webp (see docs/design/codex-letters.md).
+const letterArt=true;

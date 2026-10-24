@@ -8,13 +8,14 @@ window.SproutAccount=(()=>{
   if(!r.ok)throw new Error(String(r.status));
   return r.json();
  }
- // owner: the member whose progress is in this browser ('' for a guest). A guest's progress joins the account on first sign-in;
- // another member's progress is never mixed in, the account's own record replaces it.
+ // owner: the member whose progress is in this browser. Only that member's own progress (e.g. made offline) merges into the account.
+ // Anything else in the browser (another member, or progress left from before sign-in was required) is replaced by the account's
+ // own record, so a new account always starts at the first island and ก.
  async function start(owner,local){
   let me;try{me=await call('GET')}catch{checked=true;return null}
   checked=true;clientId=me.clientId||'';line=!!me.line;user=me.user||null;
   if(!user)return {user:null};
-  if(owner&&owner!==user.id)return {user,data:me.data||{},replaced:true};
+  if(owner!==user.id)return {user,data:me.data||{},replaced:true};
   try{const r=await call('PUT',{data:local});return {user,data:r.data}}catch{return {user,data:me.data}}
  }
  function flush(keepalive=false){clearTimeout(timer);if(!queued||!user)return;const data=queued;queued=null;call('PUT',{data},keepalive).catch(()=>{if(!queued)queued=data})}

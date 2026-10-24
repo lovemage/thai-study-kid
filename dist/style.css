@@ -235,3 +235,157 @@ html[lang="zh-Hant"] #rotate [lang="en"],html:not([lang="zh-Hant"]) #rotate [lan
 @keyframes word-nudge{20%{transform:translateX(-7px) rotate(-2deg)}40%{transform:translateX(6px) rotate(2deg)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
 .words-count{font-size:17px;font-weight:600;color:var(--green);margin:6px 0 0}
 .next.locked{opacity:.45;filter:grayscale(.7);box-shadow:none}
+/* ===================================================================================================================
+   Thai Sprout design system: paper and Korean sticker style (drafts in midjourney/, rules in docs/design/ui-system.md).
+   Everything visual below maps onto a few tokens and eight component families; add new UI by reusing them, not by new colours.
+   Textures (paper, grain, kraft, sea, dots) are images from docs/design/codex-backgrounds.md; until html.ui-art is set they are
+   'none' and the CSS-drawn fallbacks underneath show instead.
+   =================================================================================================================== */
+:root{
+ /* colour */
+ --paper:#faf5e6;--cream:#fffaf0;--kraft:#f6eedb;--ink:#364333;--ink-soft:#6b6a52;--muted:#77745c;
+ --leaf:#7cb35a;--leaf-deep:#5b8d3f;--honey:#f0c763;--honey-light:#f8dc85;--honey-deep:#c9953a;--coral:#e0704a;--sky:#a9dbe7;
+ --pastel-green:#b9d993;--pastel-yellow:#f5d06e;--pastel-teal:#95cfca;--pastel-pink:#f6c1b8;--pastel-lilac:#d6c8ee;
+ /* the sticker edge, depth and corners */
+ --edge:#fff;--edge-w:4px;
+ --shadow-pill:0 4px 0 #eadfc4,0 9px 18px rgba(140,110,50,.13);
+ --shadow-sheet:0 8px 0 #ece1c5,0 20px 34px rgba(140,110,50,.14);
+ --shadow-tile:0 6px 0 rgba(120,100,50,.13),0 14px 22px rgba(120,100,50,.14);
+ --shadow-inset:inset 0 2px 6px rgba(120,100,50,.1);
+ --r-pill:999px;--r-sheet:36px;--r-tile:26px;--r-panel:24px;
+ --outline-text:3px 0 #fff,-3px 0 #fff,0 3px #fff,0 -3px #fff,2px 2px #fff,-2px 2px #fff,2px -2px #fff,-2px -2px #fff,0 7px 9px rgba(70,50,15,.2);
+ --outline-pic:drop-shadow(2.5px 0 0 #fff) drop-shadow(-2.5px 0 0 #fff) drop-shadow(0 2.5px 0 #fff) drop-shadow(0 -2.5px 0 #fff) drop-shadow(0 5px 5px rgba(70,50,15,.2));
+ /* textures (images arrive from Codex) */
+ --tex-paper:none;--tex-grain:none;--tex-kraft:none;--tex-sea:none;--tex-dots:none;
+ /* CSS fallbacks */
+ --fallback-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .34 0 0 0 0 .2 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+ --fallback-waves:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='120'%3E%3Cg fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' opacity='.55'%3E%3Cpath d='M10 30q15-10 30 0t30 0 30 0'/%3E%3Cpath d='M150 86q14-9 28 0t28 0 28 0'/%3E%3Cpath d='M120 18q8-5 16 0'/%3E%3C/g%3E%3C/svg%3E");
+ --fallback-dots:radial-gradient(circle,rgba(255,255,255,.55) 0 2.5px,transparent 3.5px);
+}
+html.ui-art{--tex-paper:url("assets/ui/paper.webp");--tex-grain:url("assets/ui/grain.webp");--tex-kraft:url("assets/ui/kraft.webp");--tex-sea:url("assets/ui/sea.webp");--tex-dots:url("assets/ui/dots.webp")}
+svg.defs{position:absolute;width:0;height:0;overflow:hidden}
+
+/* 1. page: warm paper */
+body{background-color:var(--paper);background-image:var(--tex-paper),var(--fallback-grain);background-size:512px,180px}
+
+/* 2. sheet: the big cream surfaces that hold a screen */
+.lesson-card,.login-card,dialog,.install-banner,.cheer-banner{background:var(--tex-grain),var(--cream);background-size:512px;border:6px solid var(--edge);border-radius:var(--r-sheet);box-shadow:var(--shadow-sheet);color:var(--ink)}
+dialog{border-radius:32px}dialog::backdrop{background:rgba(70,60,30,.35);backdrop-filter:blur(2px)}
+dialog h3{color:var(--ink)}dialog p{color:var(--ink-soft)}
+.install-banner{border-radius:var(--r-pill);border-width:4px}
+
+/* 3. panel: a recessed kraft area inside a sheet (demo, writing pad, picture, speaking) */
+.demo-box,.pad-wrap,.picture-card,.speech-practice{background:var(--tex-kraft),var(--kraft);background-size:512px;border:var(--edge-w) solid var(--edge);border-radius:var(--r-panel);box-shadow:var(--shadow-inset),0 3px 0 #ece1c5}
+.pad-wrap{background:#fffdf8}
+.demo-canvas{border-radius:16px;box-shadow:0 0 0 3px #fff,0 3px 0 #e8dcc0}
+
+/* 4. sticker tile: pastel card with a thick white die-cut edge */
+.word-card,.alphabet-grid button,.celebration-letters span,.stages button,.card-face,.answers .answer-face{border:var(--edge-w) solid var(--edge);border-radius:var(--r-tile);box-shadow:var(--shadow-tile)}
+.word-card{border-width:7px;border-radius:28px;outline:2px solid rgba(255,255,255,.65);outline-offset:-15px;padding:16px 12px 18px}
+.word-card:nth-child(3n+1),.alphabet-grid button:nth-child(5n+1),.celebration-letters span:nth-child(4n+1){background:var(--tex-grain),var(--pastel-green)}
+.word-card:nth-child(3n+2),.alphabet-grid button:nth-child(5n+2),.celebration-letters span:nth-child(4n+2){background:var(--tex-grain),var(--pastel-yellow)}
+.word-card:nth-child(3n+3),.alphabet-grid button:nth-child(5n+3),.celebration-letters span:nth-child(4n+3){background:var(--tex-grain),var(--pastel-teal)}
+.alphabet-grid button:nth-child(5n+4),.celebration-letters span:nth-child(4n+4){background:var(--tex-grain),var(--pastel-pink)}
+.alphabet-grid button:nth-child(5n+5){background:var(--tex-grain),var(--pastel-lilac)}
+.word-card,.alphabet-grid button,.celebration-letters span{background-size:512px}
+.alphabet-grid button,.celebration-letters span{color:var(--ink);text-shadow:var(--outline-text)}
+.alphabet-grid small{color:var(--ink-soft);text-shadow:none;font-weight:600}
+.celebration-letters span{border-radius:22px}
+/* flip letter card and game cards: dotted pastel back, cream face */
+.card-cover,.answer-cover{background:var(--tex-dots),var(--fallback-dots) 0 0/22px 22px,var(--pastel-green);color:var(--leaf-deep)}
+.card-stitch{border:2px dashed rgba(255,255,255,.85)}
+.card-letter,.answer-front{background:var(--tex-grain),var(--cream);background-size:512px}
+.cover-sound{background:#fff;box-shadow:var(--shadow-pill)}
+.answers .correct .answer-front{background:var(--pastel-green);border-color:var(--edge)}
+.answers .try-again .answer-front{background:var(--pastel-pink);border-color:var(--edge)}
+.answers .hint-answer .answer-face{box-shadow:var(--shadow-tile),0 0 0 6px #ffe39a}
+/* writing-mode buttons: pastel tiles; the chosen one turns green with the same gold check badge as heard word cards */
+.stages button{background:var(--tex-grain),#fff;background-size:512px}
+.stages .selected{background:var(--tex-grain),var(--pastel-green);box-shadow:var(--shadow-tile);color:var(--ink)}
+.mode-check,.word-card.heard .word-sound{background:linear-gradient(var(--honey-light),#e9b54c);border:3px solid #fff;box-shadow:0 3px 0 var(--honey-deep)}
+.mode-check{width:30px;height:30px;right:4px;top:4px}
+
+/* 5. buttons: three puffy pills (primary honey, secondary white, action green), round icons, quiet links */
+.next,.install-now,.guide-done{background:linear-gradient(var(--honey-light),var(--honey) 55%,#e7b24c);color:#5a3f12;border:4px solid var(--edge);border-radius:var(--r-pill);box-shadow:inset 0 3px 0 rgba(255,255,255,.55),0 5px 0 var(--honey-deep),0 12px 18px rgba(170,120,40,.25);font-weight:700}
+.next.ready{animation:none}
+.home-button,.parents-button,.account-chip,.back,.replay,.small-listen,.dialog-button,.install-open,.hint-button{background:#fff;border:3px solid var(--edge);border-radius:var(--r-pill);box-shadow:var(--shadow-pill);color:var(--ink);font-weight:600}
+.hint-button{background:#fff3cf}
+.dialog-button{text-align:center;padding:12px 22px}
+.listen{background:linear-gradient(#93c46d,#6fa24f);color:#fff;border:4px solid var(--edge);border-radius:var(--r-pill);box-shadow:inset 0 3px 0 rgba(255,255,255,.35),0 5px 0 #4f7d36,0 12px 18px rgba(60,100,40,.22)}
+.icon-tool,.pad-tools .icon-tool,.dialog-head button,.install-dismiss,.speak-button{background:#fff;border:3px solid var(--edge);border-radius:50%;box-shadow:var(--shadow-pill);color:var(--leaf-deep)}
+.pad-tools .icon-tool{border-radius:22px}
+.icon-tool svg{stroke:var(--ink-soft)}
+.text-button,.quiet,.speech-cancel{background:none;color:var(--leaf-deep);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.next.locked{opacity:.45;filter:grayscale(.7);box-shadow:none}
+
+/* 6. chips, toggles and progress */
+.login-lang{background:#fff;border:3px solid var(--edge);box-shadow:var(--shadow-pill)}
+.login-lang .selected{background:linear-gradient(var(--honey-light),var(--honey));color:#5a3f12;box-shadow:inset 0 2px 0 rgba(255,255,255,.5)}
+.account-initial{background:linear-gradient(var(--honey-light),var(--honey));color:#5a3f12}
+.step-dots i,.words-progress i{height:11px;border-radius:var(--r-pill);background:#ebe3cb;box-shadow:inset 0 2px 0 rgba(0,0,0,.05)}
+.step-dots .filled,.words-progress i.on{background:linear-gradient(90deg,#f3c95e,#ea9a45)}
+.words-progress{display:flex;gap:6px;width:min(280px,60%);margin:10px auto 0}.words-progress i{flex:1;height:12px;transition:background .3s}
+.number{background:radial-gradient(circle at 35% 30%,#fffbe9,#f6dd9c);color:#7a561a;border:3px solid var(--edge);box-shadow:0 3px 0 #e6cf95,0 6px 10px rgba(150,110,40,.18)}
+
+/* 7. speech bubbles and feedback: white or tinted stickers */
+.coach{background:#fff;border:3px solid var(--edge);border-radius:var(--r-pill);box-shadow:var(--shadow-pill);padding-left:10px}
+.coach-face svg,.brand svg{overflow:visible}
+#toast{background:var(--ink);color:#fff;border:4px solid var(--edge);border-radius:var(--r-pill);box-shadow:var(--shadow-sheet);font-weight:600}
+.cheer-banner{color:var(--leaf-deep);border-radius:var(--r-pill);text-shadow:var(--outline-text)}
+.try-bubble{background:var(--pastel-pink);color:#7a3d26;border:4px solid var(--edge);border-radius:var(--r-pill);box-shadow:var(--shadow-pill)}
+.hint-glow{box-shadow:var(--shadow-pill),0 0 0 6px #ffe39a!important}
+.here b{position:relative;background:var(--leaf);color:#fff;border:3px solid var(--edge);border-radius:16px;padding:3px 14px;font-size:16px;box-shadow:0 3px 0 var(--leaf-deep),0 6px 10px rgba(50,90,30,.2)}
+.here b::after{content:'';position:absolute;left:50%;top:-9px;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:#fff}
+.here{top:-14%}.here svg{width:58px;height:58px;filter:none}
+.island .enter,.island.ready .enter{background:linear-gradient(var(--honey-light),var(--honey));color:#5a3f12;border:3px solid var(--edge);box-shadow:0 4px 0 var(--honey-deep)}
+
+/* 8. the sea map */
+.map{background:var(--tex-sea) 0 0/1024px 512px,var(--fallback-waves) 0 0/260px 120px,linear-gradient(180deg,#b9e3ec,#9dd3e2 55%,#a9dbe7);border:6px solid var(--edge);box-shadow:0 8px 0 #d3e6ea,0 18px 30px rgba(60,110,130,.15)}
+.map-path path{stroke-width:5;stroke-dasharray:.1 12;opacity:1}
+.island-art .water{display:none}
+.island-art .sun circle,.island-art .rain-cloud>path{stroke:#fff;stroke-width:5;paint-order:stroke}
+.island-name{background:#fff;border:3px solid var(--edge);border-radius:var(--r-pill);box-shadow:var(--shadow-pill)}
+.island-name small{background:linear-gradient(#f6cf6f,#e3a94a);box-shadow:inset 0 2px 0 rgba(255,255,255,.5)}
+.island-stars{background:#fff;border-radius:var(--r-pill);padding:3px 10px 4px;box-shadow:0 3px 0 rgba(60,110,130,.15);font-size:17px}
+.fog{background:radial-gradient(#ffffffee 32%,#ffffff00 70%)}.fog svg{width:46px;height:50px}
+
+/* screen specifics: sign-in stickers */
+.login-main{position:relative;overflow:hidden}
+.login-stickers{position:fixed;inset:0;pointer-events:none;z-index:0}
+.ls{position:absolute;font-size:clamp(40px,7vh,72px);font-weight:800;line-height:1;text-shadow:var(--outline-text);animation:sticker-float 6s ease-in-out infinite}
+.ls-star,.ls-apple,.ls-leaf{text-shadow:none;filter:var(--outline-pic);font-size:clamp(30px,5vh,48px)}
+.ls-k{left:8%;top:16%;color:var(--leaf);rotate:-10deg}.ls-kh{left:12%;top:62%;color:var(--coral);animation-delay:-2s}.ls-kho{right:10%;top:20%;color:#d6a23e;animation-delay:-4s}.ls-ng{right:14%;top:68%;color:#5aa8bd;animation-delay:-1s}
+.ls-star{right:22%;top:9%}.ls-apple{left:22%;top:84%;animation-delay:-3s}.ls-leaf{right:6%;top:46%;animation-delay:-5s}
+.ls-isle{left:4%;top:38%;width:clamp(110px,16vh,170px);animation-delay:-2.5s}.ls-isle svg{width:100%;height:auto;display:block}
+.ls-isle .island-art{filter:none;animation:none}.ls-isle .alive-only{opacity:1}.ls-isle .wither-only{display:none}
+@keyframes sticker-float{50%{translate:0 -8px}}
+.login-screen{position:relative;z-index:1}
+.login-card{border-radius:38px}
+.login-sprout svg{width:132px;height:132px;overflow:visible;animation:isle-bob 4s ease-in-out infinite}
+.login-card h1{font-size:40px}
+.google-pill{background:#fff;border:3px solid var(--edge);border-radius:var(--r-pill);padding:6px 8px;box-shadow:var(--shadow-pill);min-width:252px;display:flex;justify-content:center}
+.line-login{height:54px;min-width:252px;background:linear-gradient(#2fd46f,#06C755 55%,#05b34c);border:4px solid var(--edge);box-shadow:inset 0 3px 0 rgba(255,255,255,.35),0 5px 0 #04913d,0 12px 18px rgba(6,150,70,.22);font-size:17px}
+
+/* screen specifics: word cards */
+.word-card.heard{border-color:#fffdf6}
+.word-card.is-playing{box-shadow:var(--shadow-tile),0 0 0 6px #ffe9a6}
+.word-kind{background:#fff;color:var(--ink-soft);padding:3px 12px;box-shadow:0 2px 0 rgba(0,0,0,.06)}
+.word-pic{position:relative;display:grid;place-items:center;width:clamp(78px,15vh,124px);aspect-ratio:1}
+.word-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.word-pic.has-art .word-emoji,.word-pic.art-loading .word-emoji{visibility:hidden}
+.word-emoji{filter:var(--outline-pic)}
+.word-th{color:var(--ink);text-shadow:var(--outline-text)}.word-th b{color:var(--coral)}
+.word-mean{background:rgba(255,255,255,.85);color:var(--ink-soft);border-radius:var(--r-pill);padding:2px 14px;font-weight:600}
+.word-sound{top:auto;bottom:10px;right:10px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.85);color:var(--leaf-deep);font-size:15px}
+.word-card.heard .word-sound{top:auto;bottom:8px;right:8px;width:34px;height:34px;color:#fff;font-size:17px}
+.words-count{margin-top:6px}
+.huge-letter{color:var(--leaf-deep);text-shadow:var(--outline-text)}
+#rotate{background:var(--paper)}
+@media(prefers-reduced-motion:reduce){.ls,.login-sprout svg{animation:none}}
+.finish-card{background:var(--tex-grain),var(--cream);background-size:512px;border:6px solid var(--edge);border-radius:var(--r-sheet);box-shadow:var(--shadow-sheet);padding:44px 24px;margin-top:10px}
+.big-star{color:var(--honey);text-shadow:var(--outline-text)}
+.letter-pic{position:relative;display:grid;place-items:center}.letter-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.letter-pic.has-art>svg,.letter-pic.art-loading>svg{visibility:hidden}
+.picture-card .letter-pic{width:min(92%,380px);aspect-ratio:768/640;height:auto;max-height:62%}.quiz-picture .letter-pic{width:clamp(200px,24vw,300px);aspect-ratio:768/640;height:auto}
+.island-art .resident{filter:drop-shadow(0 3px 2px rgba(45,85,98,.25))}
+.island.alive:not(.reviving) .resident{animation:resident-bob 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom}.island.alive .resident:nth-of-type(2n){animation-delay:-1.6s}
+@keyframes resident-bob{50%{transform:translateY(-3px)}}
