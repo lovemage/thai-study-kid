@@ -1,6 +1,6 @@
 # Thai Sprout
 
-An iPad-friendly Thai consonant introduction for ages 6–8. Four chapters introduce 16 letters; the parent explorer contains all 44. Each lesson follows Listen → Write → Play with large buttons, English or Traditional Chinese hints, animated vocabulary and finger/Pencil practice.
+An iPad-friendly Thai consonant introduction for ages 6–8. Four chapters introduce 16 letters; the parent explorer contains all 44. The home screen is an adventure map: each chapter is an island that starts grey and withered and comes alive with an animation once its four letters are done; the next island unlocks after the previous one. Each lesson follows Listen → Write → Play with large buttons, English or Traditional Chinese hints, animated vocabulary and finger/Pencil practice.
 
 ## OpenRouter teacher voice
 
@@ -14,16 +14,22 @@ Generated WAV files are cached in Netlify Blobs and at the CDN. The function acc
 
 `npm ci`, then `npx netlify dev` for the complete application. For the static interface, `python -m http.server 5173 --directory dist`; static previews use the production Netlify voice API. Deploy with `npx netlify deploy --prod --site c4a2b956-8f82-43d1-ac2f-fbd084ca5a39 --no-build --dir dist --functions netlify/functions`.
 
-The public site requires no ChatGPT account. Tap a sound button to unlock audio on iPad Safari. Use Safari's Add to Home Screen if desired. Drawing supports Pointer Events, pointer capture, touch-action:none and high-DPI canvases. Progress is saved only in this browser. Drawings last for the visit; export PNG to keep them. No handwriting grading is performed.
+The public site requires no ChatGPT account. Tap a sound button to unlock audio on iPad Safari. Use Safari's Add to Home Screen if desired. Drawing supports Pointer Events, pointer capture, touch-action:none and high-DPI canvases. Progress is saved only in this browser. Drawings last for the visit and are never saved or exported. No handwriting grading is performed.
 
 ## Learning and sources
 
 Consonant introduction; vowels and tone rules are outside these starter lessons. Letter-name words do not always start with the target letter. ฃ and ฅ are historical. Use the writing animation for direction; the pale tracing letter guides shape.
 
-Thai letter-name recordings and writing models: NIU SEAsite, https://seasite.niu.edu/Thai/basic/alpha_cons_table.htm. Source URLs are in dist/assets/writing.json. Original GIF frames are PNG sprite sheets played by JavaScript. Starter illustrations are original SVG; additional explorer pictures use device emoji. Fonts: DM Sans and Noto Sans Thai, with system fallbacks. No analytics.
+Thai letter-name recordings and writing models: NIU SEAsite, https://seasite.niu.edu/Thai/basic/alpha_cons_table.htm. The stroke-order GIFs were traced into vector stroke paths (dist/assets/writing.json, with each source URL); the same path drives the smooth writing demo, the pale tracing guide and the copy model. Starter illustrations are original SVG; additional explorer pictures use device emoji. Fonts: DM Sans and Noto Sans Thai Looped (looped letterforms, matching handwriting), with system fallbacks. No analytics.
 
 ## Verification
 
 Run `node --test tests/voice.test.mjs` and `node check-assets.cjs`. Tests cover API request construction, PCM/WAV integrity, invalid input/origin rejection, missing credentials, provider failures, response size limits and all 44 lesson assets. Browser verification covers drawing, progression, matching feedback and language switching. Actual iPad Safari / Pencil hardware and a native speaker review of generated pronunciation remain separate checks.
 
 API references: https://openrouter.ai/docs/guides/overview/multimodal/tts and https://ai.google.dev/gemini-api/docs/speech-generation.
+
+## Letter reveal and illustrated writing modes
+
+Each new letter starts with its card face down. Tap the card or Listen: the cover shows a waiting animation while audio downloads and decodes. Actual audio playback triggers a lifted 3D flip and short sparkle. Prefetching alone never reveals the card. Failed or cancelled playback leaves it covered; replay keeps an already revealed card open. Reduced-motion preferences show the result without the turn or sparkles.
+
+Writing modes use illustrated buttons (dotted tracing, copying from a model, independent writing) with a selected check mark and accessible English/Chinese names. The coach hint and practice canvas change together. Run `node --test tests/reveal.test.mjs` for readiness, repeated taps, cancellation and failed audio checks.

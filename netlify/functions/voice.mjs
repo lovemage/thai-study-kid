@@ -21,13 +21,13 @@ export default async function handler(req){
   try{
     store=getStore({name:'thai-sprout-teacher-voice',consistency:'strong'});
     let cached=await store.get(cacheKey,{type:'arrayBuffer'});
-    if(cached)return new Response(cached,{headers:{...headers,'Content-Type':'audio/wav','Cache-Control':'public, max-age=604800','Netlify-CDN-Cache-Control':'public, s-maxage=31536000','X-Voice-Source':'ai-cached'}});
+    if(cached)return new Response(cached,{headers:{...headers,'Content-Type':'audio/wav','Cache-Control':'public, max-age=604800','Netlify-CDN-Cache-Control':'public, durable, s-maxage=31536000','X-Voice-Source':'ai-cached'}});
   }catch{return Response.json({error:'voice_cache_unavailable'},{status:503,headers})}
   if(!configured)return Response.json({error:'voice_not_configured'},{status:503,headers});
   try{
     if(!inflight.has(cacheKey))inflight.set(cacheKey,(async()=>{const wav=await generateVoice(clip,key);await store.set(cacheKey,wav);return wav})().finally(()=>inflight.delete(cacheKey)));
     const audio=await inflight.get(cacheKey);
-    return new Response(audio,{headers:{...headers,'Content-Type':'audio/wav','Cache-Control':'public, max-age=604800','Netlify-CDN-Cache-Control':'public, s-maxage=31536000','X-Voice-Source':'ai-generated'}});
+    return new Response(audio,{headers:{...headers,'Content-Type':'audio/wav','Cache-Control':'public, max-age=604800','Netlify-CDN-Cache-Control':'public, durable, s-maxage=31536000','X-Voice-Source':'ai-generated'}});
   }catch{return Response.json({error:'voice_temporarily_unavailable'},{status:502,headers})}
 }
 export const config={path:'/api/voice',rateLimit:{windowLimit:24,windowSize:60,aggregateBy:['ip','domain'],action:'rate_limit'}};
