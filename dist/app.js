@@ -174,7 +174,7 @@ function deviceTip(){if(deviceTip.done)return;deviceTip.done=true;
  if(!matchMedia('(pointer: coarse)').matches||Math.min(screen.width,screen.height)>=600)return;
  try{if(sessionStorage.getItem('thai-sprout-device-tip'))return;sessionStorage.setItem('thai-sprout-device-tip','1')}catch{}
  const zh=browserLang()==='zh',d=document.createElement('dialog');d.className='device-tip';d.lang=zh?'zh-Hant':'en';
- d.innerHTML=`<div class="device-tip-sprout">${sprout}</div><h3>${zh?'建議在 iPad、Android 平板或電腦上使用':'Best on an iPad, Android tablet or computer'}</h3><p>${zh?'Thai Sprout 是專為這些大螢幕裝置設計的，在手機上有些畫面會比較擠。':'Thai Sprout is designed for these larger screens. On a phone, some pages will feel cramped.'}</p><button class="dialog-button">${zh?'知道了':'Got it'}</button>`;
+ d.innerHTML=`<div class="device-tip-sprout">${sprout}</div><h3>${zh?'建議在 iPad、Android 平板或電腦上使用':'Best on an iPad, Android tablet or computer'}</h3><p>${zh?'Thai Sprout 是專為這些大螢幕裝置設計的，在手機上畫面會整個縮小，文字和按鈕都比較小。':'Thai Sprout is designed for these larger screens. On a phone, everything is shown smaller, including the words and buttons.'}</p><button class="dialog-button">${zh?'知道了':'Got it'}</button>`;
  d.querySelector('button').onclick=()=>d.close();d.addEventListener('close',()=>d.remove());document.body.append(d);d.showModal()}
 function mountLogin(){window.SproutAccount?.mountButton($('#google-login'),state.lang);$$('[data-lang]').forEach(b=>b.onclick=()=>{state.lang=b.dataset.lang;langChosen=true;saveLocal();render()})}
 // Runs at start and after signing in. The server merges a guest's progress into the account, or hands back the account's own record.

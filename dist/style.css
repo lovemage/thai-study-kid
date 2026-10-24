@@ -402,8 +402,8 @@ dialog h3{color:var(--ink)}dialog p{color:var(--ink-soft)}
 /* sign-in: a small tag over the button this device used last time */
 .login-option{position:relative;display:flex;justify-content:center}
 .last-used{position:absolute;top:-11px;right:-6px;z-index:1;background:linear-gradient(var(--honey-light),var(--honey));color:#5a3f12;border:2px solid var(--edge);border-radius:999px;padding:1px 9px;font-size:12px;font-weight:700;line-height:1.5;box-shadow:var(--shadow-pill);pointer-events:none}
-/* a phone held sideways: the browser's toolbar leaves about 300px of height, so the header, Home Screen invitation and map shrink
-   and the lessons scroll instead of squeezing into one view */
+/* a phone held sideways is normally scaled down as a whole (see the viewport script in index.html); if a browser ignores that,
+   the header, Home Screen invitation and map shrink and the lessons scroll instead of squeezing into one view */
 @media(orientation:landscape) and (max-height:599px){
  header{height:54px;padding:4px 16px;gap:8px}.home-button{min-height:44px;height:44px;padding:4px 14px}.brand svg{width:32px;height:32px}.brand strong{font-size:19px}
  .account-chip,.parents-button{min-height:44px;height:44px}
