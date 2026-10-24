@@ -38,6 +38,6 @@ test('entering the play step renders first and invokes the question automaticall
  const ctx={window:{},document:{querySelector:s=>nodes[s]||null,querySelectorAll:()=>[]},localStorage:{getItem:()=>null},matchMedia:()=>({matches:false})};
  vm.createContext(ctx);vm.runInContext(fs.readFileSync('dist/data.js','utf8')+fs.readFileSync('dist/islands.js','utf8')+src,ctx);
  const next={};nodes['#next']=next;
- vm.runInContext("var events=[];render=()=>events.push('render');playQuizPrompt=()=>events.push('sound');state.tab='write';strokesById[1]=[{points:[1,2,3,4,5]}];bind();",ctx);
+ vm.runInContext("var events=[];render=()=>events.push('render');playQuizPrompt=()=>events.push('sound');state.screen='lesson';state.tab='write';strokesById[1]=[{points:[1,2,3,4,5]}];bind();",ctx);
  next.onclick();assert.deepEqual(Array.from(vm.runInContext('events',ctx)),['render','sound']);
 });

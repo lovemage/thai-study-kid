@@ -1,5 +1,5 @@
-const VERSION='sprout-pwa-7';
-const SHELL=[ './','./index.html','./style.css','./data.js','./art.js','./islands.js','./voice.js','./app.js','./drawing.js','./speech.js','./speech-core.mjs','./pwa.js','./manifest.webmanifest','./assets/writing.json','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-maskable.png',...Array.from({length:44},(_,i)=>`./assets/letter-${i+1}.mp3`) ];
+const VERSION='sprout-pwa-9';
+const SHELL=[ './','./index.html','./style.css','./data.js','./art.js','./islands.js','./voice.js','./app.js','./drawing.js','./speech.js','./speech-core.mjs','./pwa.js','./account.js','./terms.html','./privacy.html','./legal.css','./manifest.webmanifest','./assets/writing.json','./assets/icon-180.png','./assets/icon-192.png','./assets/icon-512.png','./assets/icon-maskable.png',...Array.from({length:44},(_,i)=>`./assets/letter-${i+1}.mp3`) ];
 // Do not skipWaiting: a new release activates after all old app windows close.
 // This avoids replacing a lesson while a child is drawing or speaking.
 // Fetch the release straight from the server: a stale browser HTTP cache would otherwise freeze an old file into the new version.
@@ -19,8 +19,10 @@ self.addEventListener('fetch',event=>{
  if(url.origin!==self.location.origin||url.pathname.startsWith('/api/'))return;
  if(req.mode==='navigate'){
   event.respondWith((async()=>{
-   // Use this worker's complete release, keeping HTML and JS in sync.
-   const cache=await caches.open(VERSION);return await cache.match('./index.html')||fetch(req);
+   // Use this worker's complete release, keeping HTML and JS in sync. The terms and privacy pages are their own documents.
+   const cache=await caches.open(VERSION),page=/^\/(terms|privacy)(\.html)?$/.exec(url.pathname);
+   if(page)return await cache.match(`./${page[1]}.html`)||fetch(req);
+   return await cache.match('./index.html')||fetch(req);
   })());return;
  }
  event.respondWith((async()=>{

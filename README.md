@@ -16,7 +16,18 @@ Generated WAV files are cached in Netlify Blobs and at the CDN. The function acc
 
 `npm ci`, then `npx netlify dev` for the complete application. For the static interface, `python -m http.server 5173 --directory dist`; static previews use the production Netlify voice API. Deploy with `npx netlify deploy --prod --site c4a2b956-8f82-43d1-ac2f-fbd084ca5a39 --no-build --dir dist --functions netlify/functions`.
 
-The public site requires no ChatGPT account. Tap a sound button to unlock audio on iPad Safari. Use Safari's Add to Home Screen if desired. Drawing supports Pointer Events, pointer capture, touch-action:none and high-DPI canvases. Progress is saved only in this browser. Drawings last for the visit and are never saved or exported. No handwriting grading is performed.
+The public site requires no ChatGPT account. Tap a sound button to unlock audio on iPad Safari. Use Safari's Add to Home Screen if desired. Drawing supports Pointer Events, pointer capture, touch-action:none and high-DPI canvases. Progress is saved in this browser and, for signed-in members, in their account. Drawings last for the visit and are never saved or exported. No handwriting grading is performed.
+
+## Members: Google and LINE sign-in
+
+The app opens on a sign-in page; a grown-up signs in with Google or LINE before the islands open. The page language follows the browser (any `zh` locale shows Traditional Chinese) until someone picks English or 中文. A returning member goes straight to the island map, also offline.
+
+- Netlify Function `netlify/functions/account.mjs` serves `/api/me` (GET record, PUT save, DELETE sign out), `/api/auth/google` and `/api/auth/line[/callback]`. Shared logic and checks are in `netlify/account-core.mjs`.
+- Google: Google Cloud project *Gemini API* (`gen-lang-client-0200659460`), OAuth web client *Thai Sprout Web*. The browser gets a Google ID token (popup; redirect inside the installed app) and the server checks it against Google's keys. LINE: channel `2012186443` under provider *WACA login*; code flow with state and nonce, verified with LINE's verify endpoint.
+- Either way the server then sets its own HttpOnly session cookie for 60 days. Records live in Netlify Blobs store `thai-sprout-members` at `google/<sub>` or `line/<sub>`: profile (name, email for Google, picture) and the learning record. Saves merge, so finished steps never disappear when two devices meet; a grown-up's reset replaces the record.
+- Progress from before signing in joins the account; progress left on a shared device by another member is replaced by the account's own record. Signing out clears progress from the device.
+- Environment variables (Netlify, all scopes): `SESSION_SECRET` (32+ random characters) and `LINE_CHANNEL_SECRET`. Client and channel IDs are public and set in `account.mjs`. Allowed origins / callback URLs are the production site and `http://localhost:8888`; add any new domain in both consoles.
+- Terms and privacy pages (English and Chinese): `dist/terms.html`, `dist/privacy.html`. Tests: `node --test tests/account.test.mjs`.
 
 ## Learning and sources
 
